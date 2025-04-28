@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://i438bcrl3dcp" path="res://player/Small-8-Direction-Characters_by_AxulArt.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://duvt3uv8vq4um" path="res://player/Player.cs" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://0oqqqm84uut7" path="res://player/AnimatedSprite2d.cs" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://xiss3krmnlrf" path="res://player/PlayerAnimatedSprite2d.cs" id="3_g1dw6"]
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_rkbax"]
 
@@ -135,7 +135,6 @@ shape = SubResource("SeparationRayShape2D_rkbax")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3.75, 3.25)
 sprite_frames = SubResource("SpriteFrames_32hag")
-frame_progress = 0.885068
 script = ExtResource("3_g1dw6")
 
 [node name="Camera2D" type="Camera2D" parent="."]

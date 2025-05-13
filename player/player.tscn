@@ -3314,7 +3314,7 @@ player = NodePath("../..")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
-scale = Vector2(1.24609, 1.31641)
+scale = Vector2(0.473, 0.5)
 sprite_frames = SubResource("SpriteFrames_32hag")
 animation = &"RunSouthWest"
 

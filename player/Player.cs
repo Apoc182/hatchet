@@ -4,53 +4,47 @@ using Godot;
 
 public partial class Player : CharacterBody2D
 {
-    // Speed of the player
-    [Export]
-    public float Speed = 200.0f;
+	// Speed of the player
+	[Export]
+	public float speed = 200.0f;
 
-    [Export]
-    public AnimatedSprite2D animatedSprite2D;
+	[Export]
+	public BaseController controller;
 
-    public override void _PhysicsProcess(double delta)
-    {
-        Vector2 velocity = Vector2.Zero; // The player's movement vector
-        String direction = PlayerAnimatedSprite2d.DEFAULT;
+	public Vector2 directionFacing = Vector2.Down;
 
-        // Get input direction
-        if (Input.IsActionPressed("ui_right"))
-        {
-            velocity.X += 1;
-            direction = PlayerAnimatedSprite2d.WALK_EAST;
-        }
-        if (Input.IsActionPressed("ui_left"))
-        {
-            velocity.X -= 1;
-            direction = PlayerAnimatedSprite2d.WALK_WEST;
+	public override void _Ready()
+	{
+		controller.DirectionChanged += DirectionFacingHandler;
+		controller.DirectionHeld += CalculateVelocity;
+		controller.DirectionChanged += (Vector2 direction) => {if(direction == Vector2.Zero) Velocity = Vector2.Zero;};
 
-        }
-        if (Input.IsActionPressed("ui_down"))
-        {
-            velocity.Y += 1;
-            direction = PlayerAnimatedSprite2d.WALK_SOUTH;
+	}
 
-        }
-        if (Input.IsActionPressed("ui_up"))
-        {
-            velocity.Y -= 1;
-            direction = PlayerAnimatedSprite2d.WALK_NORTH;
+	private void CalculateVelocity(Vector2 direction){
+		
+		Velocity = CartesianToIsometric(direction);
+		Velocity = Velocity * speed;
+		GD.Print(Velocity);
+	}
 
-        }
+	private void DirectionFacingHandler(Vector2 direction){
+		if(direction != Vector2.Zero) directionFacing = direction;
+	}
 
-        animatedSprite2D.Play(direction);
+	public Vector2 CartesianToIsometric(Vector2 direction)
+	{
+		direction = direction.Normalized();
+		if(direction.X != 0 && direction.Y != 0){
+	    	return new Vector2(direction.X, direction.Y / 2);
+		}
+		return direction;
 
-        // Normalize the velocity to ensure consistent speed in all directions
-        if (velocity.Length() > 0)
-        {
-            velocity = velocity.Normalized() * Speed;
-        }
+	}
 
-        // Move the player
-        Velocity = velocity;
-        MoveAndSlide();
-    }
+
+	public override void _PhysicsProcess(double delta)
+	{
+		MoveAndSlide();
+	}
 }

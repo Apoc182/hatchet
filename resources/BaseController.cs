@@ -1,0 +1,16 @@
+using Godot;
+using System;
+
+public abstract partial class BaseController : Node2D
+{
+    // Define signals
+    [Signal]
+    public delegate void DirectionChangedEventHandler(Vector2 newDirection);
+
+    [Signal]
+    public delegate void DirectionHeldEventHandler(Vector2 direction);
+
+    [Signal]
+    public delegate void AttackStartedEventHandler();
+
+}

@@ -1,141 +1,3321 @@
-[gd_scene load_steps=19 format=3 uid="uid://bvaqey3pc2qck"]
+[gd_scene load_steps=807 format=3 uid="uid://bvaqey3pc2qck"]
 
-[ext_resource type="Texture2D" uid="uid://i438bcrl3dcp" path="res://player/Small-8-Direction-Characters_by_AxulArt.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://duvt3uv8vq4um" path="res://player/Player.cs" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://0oqqqm84uut7" path="res://player/AnimatedSprite2d.cs" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://na4yqg0lwvhr" path="res://player/PlayerController.cs" id="2_q662g"]
+[ext_resource type="Script" uid="uid://bx7jtwgribkrf" path="res://resources/StateMachine.cs" id="2_qdn6d"]
+[ext_resource type="Texture2D" uid="uid://dcjpmfcog4g0r" path="res://player/sprites/SWAT_soldier/swat_idle_v08_00.png" id="2_ydv84"]
+[ext_resource type="Script" uid="uid://ctotk8hrttngx" path="res://player/PlayerIdleState.cs" id="3_q662g"]
+[ext_resource type="Texture2D" uid="uid://dh68kkwvc6ckb" path="res://player/sprites/SWAT_soldier/swat_idle_v08_01.png" id="3_umx7l"]
+[ext_resource type="Texture2D" uid="uid://60b0u2jwted3" path="res://player/sprites/SWAT_soldier/swat_idle_v08_02.png" id="4_qdn6d"]
+[ext_resource type="Texture2D" uid="uid://dkn3c4lswv0mw" path="res://player/sprites/SWAT_soldier/swat_idle_v08_03.png" id="5_q662g"]
+[ext_resource type="Script" uid="uid://bl7ea04qe822u" path="res://player/PlayerRunState.cs" id="5_wl1jk"]
+[ext_resource type="Texture2D" uid="uid://caey1k55probi" path="res://player/sprites/SWAT_soldier/swat_idle_v08_04.png" id="6_wl1jk"]
+[ext_resource type="Texture2D" uid="uid://tx2aj67q4wbs" path="res://player/sprites/SWAT_soldier/swat_idle_v08_05.png" id="7_lfxht"]
+[ext_resource type="Texture2D" uid="uid://dfsmr2eq57qbh" path="res://player/sprites/SWAT_soldier/swat_idle_v08_06.png" id="8_q6wt3"]
+[ext_resource type="Texture2D" uid="uid://cfseldf33hxo8" path="res://player/sprites/SWAT_soldier/swat_idle_v08_07.png" id="9_17bhc"]
+[ext_resource type="Texture2D" uid="uid://bny8v0raieor3" path="res://player/sprites/SWAT_soldier/swat_idle_v08_08.png" id="10_bksrx"]
+[ext_resource type="Texture2D" uid="uid://cb6pdmu3p2k2u" path="res://player/sprites/SWAT_soldier/swat_idle_v08_09.png" id="11_rnakr"]
+[ext_resource type="Texture2D" uid="uid://ikg8gk1a3q6y" path="res://player/sprites/SWAT_soldier/swat_idle_v08_10.png" id="12_jl8y5"]
+[ext_resource type="Texture2D" uid="uid://cgq5whs00o2xv" path="res://player/sprites/SWAT_soldier/swat_idle_v08_11.png" id="13_sv6gg"]
+[ext_resource type="Texture2D" uid="uid://cvho143ablyq0" path="res://player/sprites/SWAT_soldier/swat_idle_v08_12.png" id="14_n2h8v"]
+[ext_resource type="Texture2D" uid="uid://vrslu2ckusmt" path="res://player/sprites/SWAT_soldier/swat_idle_v08_13.png" id="15_1u742"]
+[ext_resource type="Texture2D" uid="uid://eph0cdnhqd5j" path="res://player/sprites/SWAT_soldier/swat_idle_v08_14.png" id="16_pxexp"]
+[ext_resource type="Texture2D" uid="uid://cfgif8nrabev6" path="res://player/sprites/SWAT_soldier/swat_idle_v08_15.png" id="17_wyb8s"]
+[ext_resource type="Texture2D" uid="uid://ciy0k4glagxwd" path="res://player/sprites/SWAT_soldier/swat_idle_v08_16.png" id="18_jupv6"]
+[ext_resource type="Texture2D" uid="uid://cd24wuo8aeqma" path="res://player/sprites/SWAT_soldier/swat_idle_v08_17.png" id="19_op111"]
+[ext_resource type="Texture2D" uid="uid://s4h75qo7gmk4" path="res://player/sprites/SWAT_soldier/swat_idle_v08_18.png" id="20_nqad8"]
+[ext_resource type="Texture2D" uid="uid://qjb26hkwdylm" path="res://player/sprites/SWAT_soldier/swat_idle_v08_19.png" id="21_iedsq"]
+[ext_resource type="Texture2D" uid="uid://c8qjev8ncmecq" path="res://player/sprites/SWAT_soldier/swat_idle_v08_20.png" id="22_6dorl"]
+[ext_resource type="Texture2D" uid="uid://cvoq3ircac6f" path="res://player/sprites/SWAT_soldier/swat_idle_v08_21.png" id="23_jvn8n"]
+[ext_resource type="Texture2D" uid="uid://3xsd7hqgivx8" path="res://player/sprites/SWAT_soldier/swat_idle_v08_22.png" id="24_jl51y"]
+[ext_resource type="Texture2D" uid="uid://dvoh675wptioh" path="res://player/sprites/SWAT_soldier/swat_idle_v08_23.png" id="25_14ji7"]
+[ext_resource type="Texture2D" uid="uid://dawvne44cf8r0" path="res://player/sprites/SWAT_soldier/swat_idle_v08_24.png" id="26_pb0ra"]
+[ext_resource type="Texture2D" uid="uid://c1pmi8rrevm0e" path="res://player/sprites/SWAT_soldier/swat_idle_v08_25.png" id="27_xrpra"]
+[ext_resource type="Texture2D" uid="uid://bweqfst5uxkxj" path="res://player/sprites/SWAT_soldier/swat_idle_v08_26.png" id="28_1ehq1"]
+[ext_resource type="Texture2D" uid="uid://bnn6yqwo557uq" path="res://player/sprites/SWAT_soldier/swat_idle_v08_27.png" id="29_vma6g"]
+[ext_resource type="Texture2D" uid="uid://c03flavx8a4eh" path="res://player/sprites/SWAT_soldier/swat_idle_v08_28.png" id="30_c0xak"]
+[ext_resource type="Texture2D" uid="uid://u70ac2kdqk2e" path="res://player/sprites/SWAT_soldier/swat_idle_v08_29.png" id="31_hxt8d"]
+[ext_resource type="Texture2D" uid="uid://dyb4ng1vt74nt" path="res://player/sprites/SWAT_soldier/swat_idle_v08_30.png" id="32_6mnla"]
+[ext_resource type="Texture2D" uid="uid://bcykrny7jgus0" path="res://player/sprites/SWAT_soldier/swat_idle_v08_31.png" id="33_i7n05"]
+[ext_resource type="Texture2D" uid="uid://b8n3k3kfxjk2s" path="res://player/sprites/SWAT_soldier/swat_idle_v08_32.png" id="34_e5g7q"]
+[ext_resource type="Texture2D" uid="uid://b87h5ighvbkex" path="res://player/sprites/SWAT_soldier/swat_idle_v08_33.png" id="35_d3how"]
+[ext_resource type="Texture2D" uid="uid://nq6yf5qmojnn" path="res://player/sprites/SWAT_soldier/swat_idle_v08_34.png" id="36_jth23"]
+[ext_resource type="Texture2D" uid="uid://dpv1h8yqmedbg" path="res://player/sprites/SWAT_soldier/swat_idle_v08_35.png" id="37_klv10"]
+[ext_resource type="Texture2D" uid="uid://bmm03x1xhjgml" path="res://player/sprites/SWAT_soldier/swat_idle_v08_36.png" id="38_on8wm"]
+[ext_resource type="Texture2D" uid="uid://xcje863ji7d0" path="res://player/sprites/SWAT_soldier/swat_idle_v08_37.png" id="39_hxvuy"]
+[ext_resource type="Texture2D" uid="uid://n61wbh1hh0rr" path="res://player/sprites/SWAT_soldier/swat_idle_v08_38.png" id="40_ei8aw"]
+[ext_resource type="Texture2D" uid="uid://blme1ppvrnurq" path="res://player/sprites/SWAT_soldier/swat_idle_v08_39.png" id="41_0gn0k"]
+[ext_resource type="Texture2D" uid="uid://drowfauu1x0xj" path="res://player/sprites/SWAT_soldier/swat_idle_v08_40.png" id="42_qjy07"]
+[ext_resource type="Texture2D" uid="uid://ddxduax4lak3o" path="res://player/sprites/SWAT_soldier/swat_idle_v08_41.png" id="43_oawel"]
+[ext_resource type="Texture2D" uid="uid://han40obl2ons" path="res://player/sprites/SWAT_soldier/swat_idle_v08_42.png" id="44_6h2n8"]
+[ext_resource type="Texture2D" uid="uid://blkoijyojact4" path="res://player/sprites/SWAT_soldier/swat_idle_v08_43.png" id="45_h7va4"]
+[ext_resource type="Texture2D" uid="uid://b50lyqcpwmkg4" path="res://player/sprites/SWAT_soldier/swat_idle_v08_44.png" id="46_721qn"]
+[ext_resource type="Texture2D" uid="uid://bffxfa3nskvet" path="res://player/sprites/SWAT_soldier/swat_idle_v08_45.png" id="47_rm5kp"]
+[ext_resource type="Texture2D" uid="uid://djqh22y2jkthq" path="res://player/sprites/SWAT_soldier/swat_idle_v08_46.png" id="48_7r4n8"]
+[ext_resource type="Texture2D" uid="uid://bmwxuwv3g7p6u" path="res://player/sprites/SWAT_soldier/swat_idle_v08_47.png" id="49_uxfql"]
+[ext_resource type="Texture2D" uid="uid://cijtakgencv6m" path="res://player/sprites/SWAT_soldier/swat_idle_v08_48.png" id="50_rfbx8"]
+[ext_resource type="Texture2D" uid="uid://c0u02h7qg4gg5" path="res://player/sprites/SWAT_soldier/swat_idle_v08_49.png" id="51_a4wd5"]
+[ext_resource type="Texture2D" uid="uid://bclxnjd0vjmec" path="res://player/sprites/SWAT_soldier/swat_idle_v08_50.png" id="52_m2n3p"]
+[ext_resource type="Texture2D" uid="uid://l6d3dc8jmdac" path="res://player/sprites/SWAT_soldier/swat_idle_v08_51.png" id="53_tyhgc"]
+[ext_resource type="Texture2D" uid="uid://dyuvtu7pi4dg3" path="res://player/sprites/SWAT_soldier/swat_idle_v08_52.png" id="54_4vt3o"]
+[ext_resource type="Texture2D" uid="uid://dslkl1e68t30x" path="res://player/sprites/SWAT_soldier/swat_idle_v08_53.png" id="55_tdl03"]
+[ext_resource type="Texture2D" uid="uid://dix7rcvd7d07j" path="res://player/sprites/SWAT_soldier/swat_idle_v08_54.png" id="56_ejfqg"]
+[ext_resource type="Texture2D" uid="uid://bitkawdg42nak" path="res://player/sprites/SWAT_soldier/swat_idle_v08_55.png" id="57_h105b"]
+[ext_resource type="Texture2D" uid="uid://dqrf7qdg182jw" path="res://player/sprites/SWAT_soldier/swat_idle_v08_56.png" id="58_6i80e"]
+[ext_resource type="Texture2D" uid="uid://rlhlk7y5is11" path="res://player/sprites/SWAT_soldier/swat_idle_v08_57.png" id="59_ouywl"]
+[ext_resource type="Texture2D" uid="uid://c6io0itds4egi" path="res://player/sprites/SWAT_soldier/swat_idle_v08_58.png" id="60_bbfkj"]
+[ext_resource type="Texture2D" uid="uid://hp5cved0mhb2" path="res://player/sprites/SWAT_soldier/swat_idle_v08_59.png" id="61_guu8t"]
+[ext_resource type="Texture2D" uid="uid://dyv0vom6icw1t" path="res://player/sprites/SWAT_soldier/swat_idle_v08_60.png" id="62_kwbvv"]
+[ext_resource type="Texture2D" uid="uid://b5onpcfypaoak" path="res://player/sprites/SWAT_soldier/swat_idle_v08_61.png" id="63_dufbi"]
+[ext_resource type="Texture2D" uid="uid://bmf1ckay0wch" path="res://player/sprites/SWAT_soldier/swat_idle_v08_62.png" id="64_invna"]
+[ext_resource type="Texture2D" uid="uid://cqg35lrqnjc02" path="res://player/sprites/SWAT_soldier/swat_idle_v08_63.png" id="65_q55ba"]
+[ext_resource type="Texture2D" uid="uid://6nmj3t5al2a1" path="res://player/sprites/SWAT_soldier/swat_idle_v08_64.png" id="66_r0v8v"]
+[ext_resource type="Texture2D" uid="uid://dbhnobtc0w800" path="res://player/sprites/SWAT_soldier/swat_idle_v08_65.png" id="67_88pw5"]
+[ext_resource type="Texture2D" uid="uid://0s5ob18bpuwl" path="res://player/sprites/SWAT_soldier/swat_idle_v08_66.png" id="68_iedsp"]
+[ext_resource type="Texture2D" uid="uid://bpmngkcyoft70" path="res://player/sprites/SWAT_soldier/swat_idle_v08_67.png" id="69_e3ua4"]
+[ext_resource type="Texture2D" uid="uid://sxtv4mxexsr" path="res://player/sprites/SWAT_soldier/swat_idle_v08_68.png" id="70_uf4cx"]
+[ext_resource type="Texture2D" uid="uid://dert5tpj6lgwb" path="res://player/sprites/SWAT_soldier/swat_idle_v08_69.png" id="71_ld7om"]
+[ext_resource type="Texture2D" uid="uid://cveert8kwxfma" path="res://player/sprites/SWAT_soldier/swat_idle_v08_70.png" id="72_oo58m"]
+[ext_resource type="Texture2D" uid="uid://bjuh1x1m8tenr" path="res://player/sprites/SWAT_soldier/swat_idle_v08_71.png" id="73_8gmmc"]
+[ext_resource type="Texture2D" uid="uid://uuakl6luyf1m" path="res://player/sprites/SWAT_soldier/swat_idle_v08_72.png" id="74_555gf"]
+[ext_resource type="Texture2D" uid="uid://tlog24272b63" path="res://player/sprites/SWAT_soldier/swat_idle_v08_73.png" id="75_lg2ov"]
+[ext_resource type="Texture2D" uid="uid://dco564chwqhwu" path="res://player/sprites/SWAT_soldier/swat_idle_v08_74.png" id="76_g5nmi"]
+[ext_resource type="Texture2D" uid="uid://b3fchfpqhvu48" path="res://player/sprites/SWAT_soldier/swat_idle_v06_00.png" id="77_vn0cx"]
+[ext_resource type="Texture2D" uid="uid://cmtnav8a0bjm4" path="res://player/sprites/SWAT_soldier/swat_idle_v06_01.png" id="78_swetk"]
+[ext_resource type="Texture2D" uid="uid://ygjti5legws4" path="res://player/sprites/SWAT_soldier/swat_idle_v06_02.png" id="79_pccb4"]
+[ext_resource type="Texture2D" uid="uid://j20uxcvea2u7" path="res://player/sprites/SWAT_soldier/swat_idle_v06_03.png" id="80_q3i0l"]
+[ext_resource type="Texture2D" uid="uid://cq3di7k7oaqy4" path="res://player/sprites/SWAT_soldier/swat_idle_v06_04.png" id="81_vcym1"]
+[ext_resource type="Texture2D" uid="uid://cqm0os14dw3n3" path="res://player/sprites/SWAT_soldier/swat_walk_v08_01.png" id="81_vma6g"]
+[ext_resource type="Texture2D" uid="uid://bl6okmr8gawtn" path="res://player/sprites/SWAT_soldier/swat_walk_v08_02.png" id="82_c0xak"]
+[ext_resource type="Texture2D" uid="uid://dxx1va73urgpo" path="res://player/sprites/SWAT_soldier/swat_idle_v06_05.png" id="82_xf032"]
+[ext_resource type="Texture2D" uid="uid://bopqsp1ws40of" path="res://player/sprites/SWAT_soldier/swat_walk_v08_03.png" id="83_hxt8d"]
+[ext_resource type="Texture2D" uid="uid://df4u77hwk0dpm" path="res://player/sprites/SWAT_soldier/swat_idle_v06_06.png" id="83_i3i05"]
+[ext_resource type="Texture2D" uid="uid://1uoi87q34jfw" path="res://player/sprites/SWAT_soldier/swat_idle_v06_07.png" id="84_6mdpx"]
+[ext_resource type="Texture2D" uid="uid://bql34157upc6" path="res://player/sprites/SWAT_soldier/swat_walk_v08_04.png" id="84_6mnla"]
+[ext_resource type="Texture2D" uid="uid://kx1mg7vevjju" path="res://player/sprites/SWAT_soldier/swat_walk_v08_05.png" id="85_i7n05"]
+[ext_resource type="Texture2D" uid="uid://briel72sa0u28" path="res://player/sprites/SWAT_soldier/swat_idle_v06_08.png" id="85_sj8up"]
+[ext_resource type="Texture2D" uid="uid://drswvyyc5ywmm" path="res://player/sprites/SWAT_soldier/swat_idle_v06_09.png" id="86_3m31u"]
+[ext_resource type="Texture2D" uid="uid://dq1k54va33n3i" path="res://player/sprites/SWAT_soldier/swat_walk_v08_06.png" id="86_e5g7q"]
+[ext_resource type="Texture2D" uid="uid://c83l00jo3ktjk" path="res://player/sprites/SWAT_soldier/swat_walk_v08_07.png" id="87_d3how"]
+[ext_resource type="Texture2D" uid="uid://bmfvbuft30v35" path="res://player/sprites/SWAT_soldier/swat_idle_v06_10.png" id="87_tav73"]
+[ext_resource type="Texture2D" uid="uid://ctf12yb4a8c8y" path="res://player/sprites/SWAT_soldier/swat_idle_v06_11.png" id="88_hqhoy"]
+[ext_resource type="Texture2D" uid="uid://bpbv3w70mf0uw" path="res://player/sprites/SWAT_soldier/swat_walk_v08_08.png" id="88_jth23"]
+[ext_resource type="Texture2D" uid="uid://cwlarpgjc7gq7" path="res://player/sprites/SWAT_soldier/swat_walk_v08_09.png" id="89_klv10"]
+[ext_resource type="Texture2D" uid="uid://4yjth6ng8iot" path="res://player/sprites/SWAT_soldier/swat_idle_v06_12.png" id="89_vksh2"]
+[ext_resource type="Texture2D" uid="uid://dmlx4cjw3q35q" path="res://player/sprites/SWAT_soldier/swat_idle_v06_13.png" id="90_hfi6n"]
+[ext_resource type="Texture2D" uid="uid://cnngscapaw8gt" path="res://player/sprites/SWAT_soldier/swat_walk_v08_10.png" id="90_on8wm"]
+[ext_resource type="Texture2D" uid="uid://yoih2dg6dh2b" path="res://player/sprites/SWAT_soldier/swat_idle_v06_14.png" id="91_0yid7"]
+[ext_resource type="Texture2D" uid="uid://cjmsi601syfv4" path="res://player/sprites/SWAT_soldier/swat_walk_v08_11.png" id="91_hxvuy"]
+[ext_resource type="Texture2D" uid="uid://b51xky0el0hy6" path="res://player/sprites/SWAT_soldier/swat_walk_v08_12.png" id="92_ei8aw"]
+[ext_resource type="Texture2D" uid="uid://bwlresfldpp4m" path="res://player/sprites/SWAT_soldier/swat_idle_v06_15.png" id="92_jxpgx"]
+[ext_resource type="Texture2D" uid="uid://dlgqtyh448ade" path="res://player/sprites/SWAT_soldier/swat_walk_v08_13.png" id="93_0gn0k"]
+[ext_resource type="Texture2D" uid="uid://k8awxeudptnc" path="res://player/sprites/SWAT_soldier/swat_idle_v06_16.png" id="93_4hj4f"]
+[ext_resource type="Texture2D" uid="uid://dnufh75dqabqq" path="res://player/sprites/SWAT_soldier/swat_walk_v08_14.png" id="94_qjy07"]
+[ext_resource type="Texture2D" uid="uid://bvc654ayvkbx1" path="res://player/sprites/SWAT_soldier/swat_idle_v06_17.png" id="94_vwdb3"]
+[ext_resource type="Texture2D" uid="uid://mgjbwl3c2so2" path="res://player/sprites/SWAT_soldier/swat_walk_v08_15.png" id="95_oawel"]
+[ext_resource type="Texture2D" uid="uid://0dceqeos7ni1" path="res://player/sprites/SWAT_soldier/swat_idle_v06_18.png" id="95_xfi3k"]
+[ext_resource type="Texture2D" uid="uid://bwiyq08nvws6c" path="res://player/sprites/SWAT_soldier/swat_walk_v08_16.png" id="96_6h2n8"]
+[ext_resource type="Texture2D" uid="uid://dcbtpxavpeqxw" path="res://player/sprites/SWAT_soldier/swat_idle_v06_19.png" id="96_h1diw"]
+[ext_resource type="Texture2D" uid="uid://bxlqqfpm6odqy" path="res://player/sprites/SWAT_soldier/swat_idle_v06_20.png" id="97_02w3n"]
+[ext_resource type="Texture2D" uid="uid://bxatdvsupngbq" path="res://player/sprites/SWAT_soldier/swat_walk_v08_17.png" id="97_h7va4"]
+[ext_resource type="Texture2D" uid="uid://wg4avrmr34w6" path="res://player/sprites/SWAT_soldier/swat_walk_v08_18.png" id="98_721qn"]
+[ext_resource type="Texture2D" uid="uid://cdy0j5fxi2asn" path="res://player/sprites/SWAT_soldier/swat_idle_v06_21.png" id="98_cjlk7"]
+[ext_resource type="Texture2D" uid="uid://cfpqkjygslim8" path="res://player/sprites/SWAT_soldier/swat_idle_v06_22.png" id="99_0avha"]
+[ext_resource type="Texture2D" uid="uid://c77ms7juhsc50" path="res://player/sprites/SWAT_soldier/swat_walk_v08_19.png" id="99_rm5kp"]
+[ext_resource type="Texture2D" uid="uid://b4mcqnmtu8p82" path="res://player/sprites/SWAT_soldier/swat_walk_v08_20.png" id="100_7r4n8"]
+[ext_resource type="Texture2D" uid="uid://bnqcy6x1eqdft" path="res://player/sprites/SWAT_soldier/swat_idle_v06_23.png" id="100_xnbdb"]
+[ext_resource type="Texture2D" uid="uid://cgu56vhc7p40e" path="res://player/sprites/SWAT_soldier/swat_walk_v08_21.png" id="101_uxfql"]
+[ext_resource type="Texture2D" uid="uid://b1lsm7ctn2ots" path="res://player/sprites/SWAT_soldier/swat_idle_v06_24.png" id="101_y8hpb"]
+[ext_resource type="Texture2D" uid="uid://dqtp1dlh4x531" path="res://player/sprites/SWAT_soldier/swat_walk_v08_22.png" id="102_rfbx8"]
+[ext_resource type="Texture2D" uid="uid://r0x72xyh7r" path="res://player/sprites/SWAT_soldier/swat_idle_v06_25.png" id="102_tbf4m"]
+[ext_resource type="Texture2D" uid="uid://bug180edageko" path="res://player/sprites/SWAT_soldier/swat_walk_v08_23.png" id="103_a4wd5"]
+[ext_resource type="Texture2D" uid="uid://c1c16ces7hg71" path="res://player/sprites/SWAT_soldier/swat_idle_v06_26.png" id="103_co662"]
+[ext_resource type="Texture2D" uid="uid://cfj55nndnvhj7" path="res://player/sprites/SWAT_soldier/swat_walk_v08_24.png" id="104_m2n3p"]
+[ext_resource type="Texture2D" uid="uid://cocmtgwb8tfyw" path="res://player/sprites/SWAT_soldier/swat_idle_v06_27.png" id="104_vsdi4"]
+[ext_resource type="Texture2D" uid="uid://bmdnpxabw5q73" path="res://player/sprites/SWAT_soldier/swat_idle_v06_28.png" id="105_pksq6"]
+[ext_resource type="Texture2D" uid="uid://bj3gns566fb8m" path="res://player/sprites/SWAT_soldier/swat_idle_v06_29.png" id="106_hvxhc"]
+[ext_resource type="Texture2D" uid="uid://dhtckeaymmeev" path="res://player/sprites/SWAT_soldier/swat_idle_v06_30.png" id="107_t2jnh"]
+[ext_resource type="Texture2D" uid="uid://j68juxlpqvgu" path="res://player/sprites/SWAT_soldier/swat_idle_v06_31.png" id="108_c7f0k"]
+[ext_resource type="Texture2D" uid="uid://gj18fdvoyo1" path="res://player/sprites/SWAT_soldier/swat_idle_v06_32.png" id="109_nyar0"]
+[ext_resource type="Texture2D" uid="uid://dbcl476ya504b" path="res://player/sprites/SWAT_soldier/swat_idle_v06_33.png" id="110_b3lrd"]
+[ext_resource type="Texture2D" uid="uid://c671ug1e28ej0" path="res://player/sprites/SWAT_soldier/swat_idle_v06_34.png" id="111_4wg8b"]
+[ext_resource type="Texture2D" uid="uid://2fml7rg75h6r" path="res://player/sprites/SWAT_soldier/swat_idle_v06_35.png" id="112_6muug"]
+[ext_resource type="Texture2D" uid="uid://d4lim8p77pox8" path="res://player/sprites/SWAT_soldier/swat_idle_v06_36.png" id="113_1vmpf"]
+[ext_resource type="Texture2D" uid="uid://bii2lix3ngnee" path="res://player/sprites/SWAT_soldier/swat_idle_v06_37.png" id="114_n0s81"]
+[ext_resource type="Texture2D" uid="uid://cboatpv3dj3j3" path="res://player/sprites/SWAT_soldier/swat_idle_v06_38.png" id="115_ol2mk"]
+[ext_resource type="Texture2D" uid="uid://l8205enluscl" path="res://player/sprites/SWAT_soldier/swat_idle_v06_39.png" id="116_s2tfq"]
+[ext_resource type="Texture2D" uid="uid://d4nxdjbpf6ys5" path="res://player/sprites/SWAT_soldier/swat_idle_v06_40.png" id="117_oh8cm"]
+[ext_resource type="Texture2D" uid="uid://cnyclqn01ykm" path="res://player/sprites/SWAT_soldier/swat_idle_v06_41.png" id="118_73sc7"]
+[ext_resource type="Texture2D" uid="uid://uhxd5k5h2lj6" path="res://player/sprites/SWAT_soldier/swat_idle_v06_42.png" id="119_gd3ho"]
+[ext_resource type="Texture2D" uid="uid://b1hafaii7j1k0" path="res://player/sprites/SWAT_soldier/swat_idle_v06_43.png" id="120_1p4ol"]
+[ext_resource type="Texture2D" uid="uid://cb85k0i58t80" path="res://player/sprites/SWAT_soldier/swat_idle_v06_44.png" id="121_bwa6i"]
+[ext_resource type="Texture2D" uid="uid://bmwvkprfloulu" path="res://player/sprites/SWAT_soldier/swat_idle_v06_45.png" id="122_jxwtj"]
+[ext_resource type="Texture2D" uid="uid://nq5no0oddu34" path="res://player/sprites/SWAT_soldier/swat_idle_v06_46.png" id="123_2irbu"]
+[ext_resource type="Texture2D" uid="uid://bbwudgkd5lfnt" path="res://player/sprites/SWAT_soldier/swat_idle_v06_47.png" id="124_vcoxd"]
+[ext_resource type="Texture2D" uid="uid://fi7mfs6ph5eh" path="res://player/sprites/SWAT_soldier/swat_idle_v06_48.png" id="125_646mi"]
+[ext_resource type="Texture2D" uid="uid://d1ocpwau2w5h1" path="res://player/sprites/SWAT_soldier/swat_idle_v06_49.png" id="126_uiowf"]
+[ext_resource type="Texture2D" uid="uid://chbyjx07mh5p5" path="res://player/sprites/SWAT_soldier/swat_idle_v06_50.png" id="127_sn3xh"]
+[ext_resource type="Texture2D" uid="uid://b3qnxmayfy87k" path="res://player/sprites/SWAT_soldier/swat_idle_v06_51.png" id="128_3lw60"]
+[ext_resource type="Texture2D" uid="uid://5obryp1oe0fx" path="res://player/sprites/SWAT_soldier/swat_idle_v06_52.png" id="129_r4wtc"]
+[ext_resource type="Texture2D" uid="uid://dsclgssbmu0ll" path="res://player/sprites/SWAT_soldier/swat_idle_v06_53.png" id="130_bf3f2"]
+[ext_resource type="Texture2D" uid="uid://dblbim73onheu" path="res://player/sprites/SWAT_soldier/swat_idle_v06_54.png" id="131_gchne"]
+[ext_resource type="Texture2D" uid="uid://b8w2iq4jiya3r" path="res://player/sprites/SWAT_soldier/swat_idle_v06_55.png" id="132_d02b5"]
+[ext_resource type="Texture2D" uid="uid://cud6jg2sst13s" path="res://player/sprites/SWAT_soldier/swat_idle_v06_56.png" id="133_03hff"]
+[ext_resource type="Texture2D" uid="uid://xawn4rav6wi2" path="res://player/sprites/SWAT_soldier/swat_idle_v06_57.png" id="134_ab8ew"]
+[ext_resource type="Texture2D" uid="uid://xywxco0d3s7a" path="res://player/sprites/SWAT_soldier/swat_idle_v06_58.png" id="135_2unwl"]
+[ext_resource type="Texture2D" uid="uid://r7fkg1nbdwnn" path="res://player/sprites/SWAT_soldier/swat_idle_v06_59.png" id="136_spkeb"]
+[ext_resource type="Texture2D" uid="uid://b4ia3613nuy4u" path="res://player/sprites/SWAT_soldier/swat_idle_v06_60.png" id="137_vyrre"]
+[ext_resource type="Texture2D" uid="uid://7x10pxcoweud" path="res://player/sprites/SWAT_soldier/swat_idle_v06_61.png" id="138_y3uv5"]
+[ext_resource type="Texture2D" uid="uid://j8ysftkq3vqj" path="res://player/sprites/SWAT_soldier/swat_idle_v06_62.png" id="139_n1vaw"]
+[ext_resource type="Texture2D" uid="uid://d5d342t0gd82" path="res://player/sprites/SWAT_soldier/swat_idle_v06_63.png" id="140_yi622"]
+[ext_resource type="Texture2D" uid="uid://bcjxdp83llvbt" path="res://player/sprites/SWAT_soldier/swat_idle_v06_64.png" id="141_wh2jv"]
+[ext_resource type="Texture2D" uid="uid://bd2eilyrv004w" path="res://player/sprites/SWAT_soldier/swat_idle_v06_65.png" id="142_bcm8b"]
+[ext_resource type="Texture2D" uid="uid://c2a7ltcmtvxck" path="res://player/sprites/SWAT_soldier/swat_idle_v06_66.png" id="143_jm13r"]
+[ext_resource type="Texture2D" uid="uid://d3qdcf3lgdxp8" path="res://player/sprites/SWAT_soldier/swat_idle_v06_67.png" id="144_phgcs"]
+[ext_resource type="Texture2D" uid="uid://d0rktujqpkl8v" path="res://player/sprites/SWAT_soldier/swat_idle_v06_68.png" id="145_vox8j"]
+[ext_resource type="Texture2D" uid="uid://boxm8if17opsq" path="res://player/sprites/SWAT_soldier/swat_idle_v06_69.png" id="146_8785t"]
+[ext_resource type="Texture2D" uid="uid://bkw5bk824cby" path="res://player/sprites/SWAT_soldier/swat_idle_v06_70.png" id="147_dmbog"]
+[ext_resource type="Texture2D" uid="uid://v8p1gwv661bb" path="res://player/sprites/SWAT_soldier/swat_idle_v06_71.png" id="148_sa05m"]
+[ext_resource type="Texture2D" uid="uid://ckhphacj00ioc" path="res://player/sprites/SWAT_soldier/swat_idle_v06_72.png" id="149_ne73j"]
+[ext_resource type="Texture2D" uid="uid://bqqteuc5eysdi" path="res://player/sprites/SWAT_soldier/swat_idle_v06_73.png" id="150_b6omq"]
+[ext_resource type="Texture2D" uid="uid://dby2rkj6le4hs" path="res://player/sprites/SWAT_soldier/swat_idle_v06_74.png" id="151_aa3x8"]
+[ext_resource type="Texture2D" uid="uid://cbcgjfyabfjyn" path="res://player/sprites/SWAT_soldier/swat_idle_v04_00.png" id="152_2ruik"]
+[ext_resource type="Texture2D" uid="uid://dwg0di3yxnwv" path="res://player/sprites/SWAT_soldier/swat_idle_v04_01.png" id="153_ihlbj"]
+[ext_resource type="Texture2D" uid="uid://b0yqkd5g0c70f" path="res://player/sprites/SWAT_soldier/swat_idle_v04_02.png" id="154_41851"]
+[ext_resource type="Texture2D" uid="uid://blfnq8x3311mv" path="res://player/sprites/SWAT_soldier/swat_idle_v04_03.png" id="155_neq8l"]
+[ext_resource type="Texture2D" uid="uid://c4c3lxaklw2xi" path="res://player/sprites/SWAT_soldier/swat_idle_v04_04.png" id="156_ew5ah"]
+[ext_resource type="Texture2D" uid="uid://isbhhsk2bb18" path="res://player/sprites/SWAT_soldier/swat_idle_v04_05.png" id="157_xp5r2"]
+[ext_resource type="Texture2D" uid="uid://cyjwuks0xd85u" path="res://player/sprites/SWAT_soldier/swat_idle_v04_06.png" id="158_yve4n"]
+[ext_resource type="Texture2D" uid="uid://eywv6iwigi8s" path="res://player/sprites/SWAT_soldier/swat_idle_v04_07.png" id="159_s2axw"]
+[ext_resource type="Texture2D" uid="uid://cfy5mqsrcnn13" path="res://player/sprites/SWAT_soldier/swat_idle_v04_08.png" id="160_03vs3"]
+[ext_resource type="Texture2D" uid="uid://c2l4biasy65im" path="res://player/sprites/SWAT_soldier/swat_idle_v04_09.png" id="161_thsc8"]
+[ext_resource type="Texture2D" uid="uid://ca2u6me5hb3wi" path="res://player/sprites/SWAT_soldier/swat_idle_v04_10.png" id="162_ioine"]
+[ext_resource type="Texture2D" uid="uid://bbk26lp6x0c5g" path="res://player/sprites/SWAT_soldier/swat_idle_v04_11.png" id="163_rlt4x"]
+[ext_resource type="Texture2D" uid="uid://bcqi8okqmorxx" path="res://player/sprites/SWAT_soldier/swat_idle_v04_12.png" id="164_ngx2e"]
+[ext_resource type="Texture2D" uid="uid://b1aiox2xg21aa" path="res://player/sprites/SWAT_soldier/swat_idle_v04_13.png" id="165_d4nj6"]
+[ext_resource type="Texture2D" uid="uid://jnud7m3ikc3l" path="res://player/sprites/SWAT_soldier/swat_idle_v04_14.png" id="166_laqub"]
+[ext_resource type="Texture2D" uid="uid://db17wo50r37p7" path="res://player/sprites/SWAT_soldier/swat_idle_v04_15.png" id="167_iksxh"]
+[ext_resource type="Texture2D" uid="uid://bpm0j3cn1jrdl" path="res://player/sprites/SWAT_soldier/swat_idle_v04_16.png" id="168_vlpbc"]
+[ext_resource type="Texture2D" uid="uid://rxkt4uyxsvb0" path="res://player/sprites/SWAT_soldier/swat_idle_v04_17.png" id="169_nxkwt"]
+[ext_resource type="Texture2D" uid="uid://5k25rtwoqmeo" path="res://player/sprites/SWAT_soldier/swat_idle_v04_18.png" id="170_0o82o"]
+[ext_resource type="Texture2D" uid="uid://cuua7ele7ykty" path="res://player/sprites/SWAT_soldier/swat_idle_v04_19.png" id="171_2rrkc"]
+[ext_resource type="Texture2D" uid="uid://8fb2m62r3i86" path="res://player/sprites/SWAT_soldier/swat_idle_v04_20.png" id="172_s5fwh"]
+[ext_resource type="Texture2D" uid="uid://x3y83yswxc2p" path="res://player/sprites/SWAT_soldier/swat_idle_v04_21.png" id="173_mciyf"]
+[ext_resource type="Texture2D" uid="uid://cq7vvmlsnr7xc" path="res://player/sprites/SWAT_soldier/swat_idle_v04_22.png" id="174_rum62"]
+[ext_resource type="Texture2D" uid="uid://bbq1oqhwv7ehu" path="res://player/sprites/SWAT_soldier/swat_idle_v04_23.png" id="175_xfosx"]
+[ext_resource type="Texture2D" uid="uid://do3akkawthfkm" path="res://player/sprites/SWAT_soldier/swat_idle_v04_24.png" id="176_0cgsx"]
+[ext_resource type="Texture2D" uid="uid://b35jap8kng4ja" path="res://player/sprites/SWAT_soldier/swat_idle_v04_25.png" id="177_1xj55"]
+[ext_resource type="Texture2D" uid="uid://bjh24d5tiqno6" path="res://player/sprites/SWAT_soldier/swat_idle_v04_26.png" id="178_7e7p1"]
+[ext_resource type="Texture2D" uid="uid://cue3ug1mwrh0g" path="res://player/sprites/SWAT_soldier/swat_idle_v04_27.png" id="179_p43ch"]
+[ext_resource type="Texture2D" uid="uid://dsa6vxawck0nm" path="res://player/sprites/SWAT_soldier/swat_idle_v04_28.png" id="180_ht7a4"]
+[ext_resource type="Texture2D" uid="uid://dd5hxws6kibhv" path="res://player/sprites/SWAT_soldier/swat_idle_v04_29.png" id="181_7g78q"]
+[ext_resource type="Texture2D" uid="uid://ctmn3wca2xcvi" path="res://player/sprites/SWAT_soldier/swat_idle_v04_30.png" id="182_s8o1q"]
+[ext_resource type="Texture2D" uid="uid://kqx3724fp8qg" path="res://player/sprites/SWAT_soldier/swat_idle_v04_31.png" id="183_2t0sk"]
+[ext_resource type="Texture2D" uid="uid://blt0iks46ke5" path="res://player/sprites/SWAT_soldier/swat_idle_v04_32.png" id="184_obuac"]
+[ext_resource type="Texture2D" uid="uid://drk8tdgfjiu4c" path="res://player/sprites/SWAT_soldier/swat_idle_v04_33.png" id="185_ejhsx"]
+[ext_resource type="Texture2D" uid="uid://bou10wedqjtsm" path="res://player/sprites/SWAT_soldier/swat_idle_v04_34.png" id="186_g3u2y"]
+[ext_resource type="Texture2D" uid="uid://ccb6mnshltmu2" path="res://player/sprites/SWAT_soldier/swat_idle_v04_35.png" id="187_8kjsp"]
+[ext_resource type="Texture2D" uid="uid://ckwkspgioc4n7" path="res://player/sprites/SWAT_soldier/swat_idle_v04_36.png" id="188_2oius"]
+[ext_resource type="Texture2D" uid="uid://btnwus48a804u" path="res://player/sprites/SWAT_soldier/swat_idle_v04_37.png" id="189_jr6ob"]
+[ext_resource type="Texture2D" uid="uid://cubtuxn25pfju" path="res://player/sprites/SWAT_soldier/swat_idle_v04_38.png" id="190_v6ykp"]
+[ext_resource type="Texture2D" uid="uid://d0x7fj1lr1loa" path="res://player/sprites/SWAT_soldier/swat_idle_v04_39.png" id="191_87iyv"]
+[ext_resource type="Texture2D" uid="uid://cyvoiv0r2sddi" path="res://player/sprites/SWAT_soldier/swat_idle_v04_40.png" id="192_bkcjq"]
+[ext_resource type="Texture2D" uid="uid://pohaeskbhb73" path="res://player/sprites/SWAT_soldier/swat_idle_v04_41.png" id="193_yhqyb"]
+[ext_resource type="Texture2D" uid="uid://b0kpd42hnvms4" path="res://player/sprites/SWAT_soldier/swat_idle_v04_42.png" id="194_m717h"]
+[ext_resource type="Texture2D" uid="uid://dlw1hpoh0yflu" path="res://player/sprites/SWAT_soldier/swat_idle_v04_43.png" id="195_h5xoa"]
+[ext_resource type="Texture2D" uid="uid://cjf0gl6nqg6tu" path="res://player/sprites/SWAT_soldier/swat_idle_v04_44.png" id="196_4x77g"]
+[ext_resource type="Texture2D" uid="uid://bngjm5u2qq11k" path="res://player/sprites/SWAT_soldier/swat_idle_v04_45.png" id="197_yy7uj"]
+[ext_resource type="Texture2D" uid="uid://brfrrq5o8hs86" path="res://player/sprites/SWAT_soldier/swat_idle_v04_46.png" id="198_pipov"]
+[ext_resource type="Texture2D" uid="uid://crll201uvti0u" path="res://player/sprites/SWAT_soldier/swat_idle_v04_47.png" id="199_6uf0p"]
+[ext_resource type="Texture2D" uid="uid://bm1m2s4udo3og" path="res://player/sprites/SWAT_soldier/swat_idle_v04_48.png" id="200_hfx74"]
+[ext_resource type="Texture2D" uid="uid://cevspjblnergp" path="res://player/sprites/SWAT_soldier/swat_idle_v04_49.png" id="201_funsh"]
+[ext_resource type="Texture2D" uid="uid://rkmvj7lvd7v3" path="res://player/sprites/SWAT_soldier/swat_idle_v04_50.png" id="202_dp31c"]
+[ext_resource type="Texture2D" uid="uid://dd2vy5qr61jww" path="res://player/sprites/SWAT_soldier/swat_idle_v04_51.png" id="203_gbhxm"]
+[ext_resource type="Texture2D" uid="uid://n0cqjp5kt631" path="res://player/sprites/SWAT_soldier/swat_idle_v04_52.png" id="204_78jm1"]
+[ext_resource type="Texture2D" uid="uid://cx0v60qgbjerb" path="res://player/sprites/SWAT_soldier/swat_idle_v04_53.png" id="205_cjtc3"]
+[ext_resource type="Texture2D" uid="uid://dkgjicuaaq8co" path="res://player/sprites/SWAT_soldier/swat_idle_v04_54.png" id="206_oovy3"]
+[ext_resource type="Texture2D" uid="uid://fd105ctd5ree" path="res://player/sprites/SWAT_soldier/swat_idle_v04_55.png" id="207_px68h"]
+[ext_resource type="Texture2D" uid="uid://br0pkpeidlejy" path="res://player/sprites/SWAT_soldier/swat_idle_v04_56.png" id="208_5cj1f"]
+[ext_resource type="Texture2D" uid="uid://o82ul282jqq7" path="res://player/sprites/SWAT_soldier/swat_idle_v04_57.png" id="209_015kw"]
+[ext_resource type="Texture2D" uid="uid://bfanayku57htf" path="res://player/sprites/SWAT_soldier/swat_idle_v04_58.png" id="210_helwc"]
+[ext_resource type="Texture2D" uid="uid://bcd3y5a1e4ejy" path="res://player/sprites/SWAT_soldier/swat_idle_v04_59.png" id="211_uscxv"]
+[ext_resource type="Texture2D" uid="uid://bv5hn7uj1hfdq" path="res://player/sprites/SWAT_soldier/swat_idle_v04_60.png" id="212_fgcko"]
+[ext_resource type="Texture2D" uid="uid://d3sutxdakseuc" path="res://player/sprites/SWAT_soldier/swat_idle_v04_61.png" id="213_kahlt"]
+[ext_resource type="Texture2D" uid="uid://dq7mbkkemyemm" path="res://player/sprites/SWAT_soldier/swat_idle_v04_62.png" id="214_au31q"]
+[ext_resource type="Texture2D" uid="uid://dpngo2rr4s5yl" path="res://player/sprites/SWAT_soldier/swat_idle_v04_63.png" id="215_g2sko"]
+[ext_resource type="Texture2D" uid="uid://cctc5n22ssdlq" path="res://player/sprites/SWAT_soldier/swat_idle_v04_64.png" id="216_lawc5"]
+[ext_resource type="Texture2D" uid="uid://de3ndv3m15gl1" path="res://player/sprites/SWAT_soldier/swat_idle_v04_65.png" id="217_gn2vd"]
+[ext_resource type="Texture2D" uid="uid://bmxtpnhmjvjv" path="res://player/sprites/SWAT_soldier/swat_idle_v04_66.png" id="218_jlh7v"]
+[ext_resource type="Texture2D" uid="uid://c6ldbfxq3yop3" path="res://player/sprites/SWAT_soldier/swat_idle_v04_67.png" id="219_wkngu"]
+[ext_resource type="Texture2D" uid="uid://ubgdb251oaxf" path="res://player/sprites/SWAT_soldier/swat_idle_v04_68.png" id="220_di6kj"]
+[ext_resource type="Texture2D" uid="uid://b8bn4m4sdxvhc" path="res://player/sprites/SWAT_soldier/swat_idle_v04_69.png" id="221_45ntp"]
+[ext_resource type="Texture2D" uid="uid://bfowu68gacj7p" path="res://player/sprites/SWAT_soldier/swat_idle_v04_70.png" id="222_c760d"]
+[ext_resource type="Texture2D" uid="uid://dai1ft1w0m8mw" path="res://player/sprites/SWAT_soldier/swat_idle_v04_71.png" id="223_u1pxr"]
+[ext_resource type="Texture2D" uid="uid://bjaucct8slk5h" path="res://player/sprites/SWAT_soldier/swat_idle_v04_72.png" id="224_bwu7s"]
+[ext_resource type="Texture2D" uid="uid://co8ng1bigh3wg" path="res://player/sprites/SWAT_soldier/swat_idle_v04_73.png" id="225_flddj"]
+[ext_resource type="Texture2D" uid="uid://cat5q7757g1bs" path="res://player/sprites/SWAT_soldier/swat_idle_v04_74.png" id="226_glow7"]
+[ext_resource type="Texture2D" uid="uid://dlxtirkxpac5w" path="res://player/sprites/SWAT_soldier/swat_idle_v05_00.png" id="227_a6cgw"]
+[ext_resource type="Texture2D" uid="uid://nfpncbo42mln" path="res://player/sprites/SWAT_soldier/swat_idle_v05_01.png" id="228_5j2cn"]
+[ext_resource type="Texture2D" uid="uid://bli4b6inlqw0y" path="res://player/sprites/SWAT_soldier/swat_idle_v05_02.png" id="229_ytsno"]
+[ext_resource type="Texture2D" uid="uid://pslh27pxjujr" path="res://player/sprites/SWAT_soldier/swat_idle_v05_03.png" id="230_0hpa8"]
+[ext_resource type="Texture2D" uid="uid://boj4v353nmdc6" path="res://player/sprites/SWAT_soldier/swat_idle_v05_04.png" id="231_7f5bx"]
+[ext_resource type="Texture2D" uid="uid://bnqiq8xqs6omm" path="res://player/sprites/SWAT_soldier/swat_idle_v05_05.png" id="232_gytvk"]
+[ext_resource type="Texture2D" uid="uid://cvqn44448s4na" path="res://player/sprites/SWAT_soldier/swat_idle_v05_06.png" id="233_q664k"]
+[ext_resource type="Texture2D" uid="uid://wfdx0ulw2qb3" path="res://player/sprites/SWAT_soldier/swat_idle_v05_07.png" id="234_tuih0"]
+[ext_resource type="Texture2D" uid="uid://cs2p64uyb88s5" path="res://player/sprites/SWAT_soldier/swat_idle_v05_08.png" id="235_fl2jp"]
+[ext_resource type="Texture2D" uid="uid://dvqypy8ewm2qe" path="res://player/sprites/SWAT_soldier/swat_idle_v05_09.png" id="236_qjn7m"]
+[ext_resource type="Texture2D" uid="uid://b44u6v80n5oqu" path="res://player/sprites/SWAT_soldier/swat_idle_v05_10.png" id="237_81mnl"]
+[ext_resource type="Texture2D" uid="uid://dclco1p50ciu6" path="res://player/sprites/SWAT_soldier/swat_idle_v05_11.png" id="238_2qua3"]
+[ext_resource type="Texture2D" uid="uid://dy7xkkkpxmo7x" path="res://player/sprites/SWAT_soldier/swat_idle_v05_12.png" id="239_pxna7"]
+[ext_resource type="Texture2D" uid="uid://drcp32u41im5p" path="res://player/sprites/SWAT_soldier/swat_idle_v05_13.png" id="240_osmob"]
+[ext_resource type="Texture2D" uid="uid://c3vv311ihpwdi" path="res://player/sprites/SWAT_soldier/swat_idle_v05_14.png" id="241_4koam"]
+[ext_resource type="Texture2D" uid="uid://b3jnickr2iesc" path="res://player/sprites/SWAT_soldier/swat_idle_v05_15.png" id="242_grxbf"]
+[ext_resource type="Texture2D" uid="uid://d3was53cotrxb" path="res://player/sprites/SWAT_soldier/swat_idle_v05_16.png" id="243_dutb3"]
+[ext_resource type="Texture2D" uid="uid://dcqbplleij0xo" path="res://player/sprites/SWAT_soldier/swat_idle_v05_17.png" id="244_c3xrm"]
+[ext_resource type="Texture2D" uid="uid://cdlj0c8ycqp8k" path="res://player/sprites/SWAT_soldier/swat_idle_v05_18.png" id="245_dch1w"]
+[ext_resource type="Texture2D" uid="uid://cflvjjbbitjyf" path="res://player/sprites/SWAT_soldier/swat_idle_v05_19.png" id="246_lddm2"]
+[ext_resource type="Texture2D" uid="uid://bxbioval62iji" path="res://player/sprites/SWAT_soldier/swat_idle_v05_20.png" id="247_2e781"]
+[ext_resource type="Texture2D" uid="uid://b5mfmw3cfr0c0" path="res://player/sprites/SWAT_soldier/swat_idle_v05_21.png" id="248_lfv6t"]
+[ext_resource type="Texture2D" uid="uid://c4pr6r4nahfjr" path="res://player/sprites/SWAT_soldier/swat_idle_v05_22.png" id="249_y78v6"]
+[ext_resource type="Texture2D" uid="uid://c8ht1dba8ihe2" path="res://player/sprites/SWAT_soldier/swat_idle_v05_23.png" id="250_qugt1"]
+[ext_resource type="Texture2D" uid="uid://bdbqcgyr6jpyd" path="res://player/sprites/SWAT_soldier/swat_idle_v05_24.png" id="251_ip5vf"]
+[ext_resource type="Texture2D" uid="uid://bl5226hfao1s" path="res://player/sprites/SWAT_soldier/swat_idle_v05_25.png" id="252_2jdml"]
+[ext_resource type="Texture2D" uid="uid://cxg3wjl1bh8s8" path="res://player/sprites/SWAT_soldier/swat_idle_v05_26.png" id="253_oyyhe"]
+[ext_resource type="Texture2D" uid="uid://dthgo8uw3kcvb" path="res://player/sprites/SWAT_soldier/swat_idle_v05_27.png" id="254_4vffb"]
+[ext_resource type="Texture2D" uid="uid://dofibwmikedsj" path="res://player/sprites/SWAT_soldier/swat_idle_v05_28.png" id="255_hcbsw"]
+[ext_resource type="Texture2D" uid="uid://c6ws5d1756o5j" path="res://player/sprites/SWAT_soldier/swat_idle_v05_29.png" id="256_xid2j"]
+[ext_resource type="Texture2D" uid="uid://b68cdy8ln32x2" path="res://player/sprites/SWAT_soldier/swat_idle_v05_30.png" id="257_os0wf"]
+[ext_resource type="Texture2D" uid="uid://cr7oyqsfy4d13" path="res://player/sprites/SWAT_soldier/swat_idle_v05_31.png" id="258_3sh7i"]
+[ext_resource type="Texture2D" uid="uid://c7jb5hdb7lq32" path="res://player/sprites/SWAT_soldier/swat_idle_v05_32.png" id="259_1qew4"]
+[ext_resource type="Texture2D" uid="uid://d4n0snyn0wtcm" path="res://player/sprites/SWAT_soldier/swat_idle_v05_33.png" id="260_07xyw"]
+[ext_resource type="Texture2D" uid="uid://cw6kyiify8ipy" path="res://player/sprites/SWAT_soldier/swat_idle_v05_34.png" id="261_0ejj7"]
+[ext_resource type="Texture2D" uid="uid://xylnmumsl3ru" path="res://player/sprites/SWAT_soldier/swat_idle_v05_35.png" id="262_up7ff"]
+[ext_resource type="Texture2D" uid="uid://byrb3hjwgh5iv" path="res://player/sprites/SWAT_soldier/swat_idle_v05_36.png" id="263_divc2"]
+[ext_resource type="Texture2D" uid="uid://ddl7ndepax4mv" path="res://player/sprites/SWAT_soldier/swat_idle_v05_37.png" id="264_5kfeu"]
+[ext_resource type="Texture2D" uid="uid://c8nvrfglimhvg" path="res://player/sprites/SWAT_soldier/swat_idle_v05_38.png" id="265_qrawf"]
+[ext_resource type="Texture2D" uid="uid://dwaf1c6sn3k8b" path="res://player/sprites/SWAT_soldier/swat_idle_v05_39.png" id="266_l21a6"]
+[ext_resource type="Texture2D" uid="uid://brh76o1wx015q" path="res://player/sprites/SWAT_soldier/swat_idle_v05_40.png" id="267_nc5ly"]
+[ext_resource type="Texture2D" uid="uid://ddi7wf27utito" path="res://player/sprites/SWAT_soldier/swat_idle_v05_41.png" id="268_uavov"]
+[ext_resource type="Texture2D" uid="uid://rgrqxxgl50c2" path="res://player/sprites/SWAT_soldier/swat_idle_v05_42.png" id="269_qd2om"]
+[ext_resource type="Texture2D" uid="uid://4svg0bh14jxo" path="res://player/sprites/SWAT_soldier/swat_idle_v05_43.png" id="270_uvlft"]
+[ext_resource type="Texture2D" uid="uid://dm8la24rahxq3" path="res://player/sprites/SWAT_soldier/swat_idle_v05_44.png" id="271_yh5kx"]
+[ext_resource type="Texture2D" uid="uid://gniqbj4lppjn" path="res://player/sprites/SWAT_soldier/swat_idle_v05_45.png" id="272_o6ql0"]
+[ext_resource type="Texture2D" uid="uid://y7xpucmheew1" path="res://player/sprites/SWAT_soldier/swat_idle_v05_46.png" id="273_uh8xk"]
+[ext_resource type="Texture2D" uid="uid://xbtfd680jb10" path="res://player/sprites/SWAT_soldier/swat_idle_v05_47.png" id="274_lfgb2"]
+[ext_resource type="Texture2D" uid="uid://chw320472h7yf" path="res://player/sprites/SWAT_soldier/swat_idle_v05_48.png" id="275_ctvwv"]
+[ext_resource type="Texture2D" uid="uid://bah6axcjyeopp" path="res://player/sprites/SWAT_soldier/swat_idle_v05_49.png" id="276_qlyc7"]
+[ext_resource type="Texture2D" uid="uid://iucewjo2ye83" path="res://player/sprites/SWAT_soldier/swat_idle_v05_50.png" id="277_a7gbv"]
+[ext_resource type="Texture2D" uid="uid://cfk5gwpxjgdel" path="res://player/sprites/SWAT_soldier/swat_idle_v05_51.png" id="278_6vvnh"]
+[ext_resource type="Texture2D" uid="uid://bpaivxx2x5dh0" path="res://player/sprites/SWAT_soldier/swat_idle_v05_52.png" id="279_2o212"]
+[ext_resource type="Texture2D" uid="uid://w7hwmwywtrxh" path="res://player/sprites/SWAT_soldier/swat_idle_v05_53.png" id="280_dbc7t"]
+[ext_resource type="Texture2D" uid="uid://cvoysogfkqen1" path="res://player/sprites/SWAT_soldier/swat_idle_v05_54.png" id="281_j63ij"]
+[ext_resource type="Texture2D" uid="uid://di281e2mglwme" path="res://player/sprites/SWAT_soldier/swat_idle_v05_55.png" id="282_ouxt2"]
+[ext_resource type="Texture2D" uid="uid://ds02eq8iatgii" path="res://player/sprites/SWAT_soldier/swat_idle_v05_56.png" id="283_cpl1n"]
+[ext_resource type="Texture2D" uid="uid://cu1f16kswk5tt" path="res://player/sprites/SWAT_soldier/swat_idle_v05_57.png" id="284_6h6ig"]
+[ext_resource type="Texture2D" uid="uid://dhyqpct48onnm" path="res://player/sprites/SWAT_soldier/swat_idle_v05_58.png" id="285_df033"]
+[ext_resource type="Texture2D" uid="uid://bh7crxk32kf15" path="res://player/sprites/SWAT_soldier/swat_idle_v05_59.png" id="286_3uwlh"]
+[ext_resource type="Texture2D" uid="uid://boojptaa1cdat" path="res://player/sprites/SWAT_soldier/swat_idle_v05_60.png" id="287_0e4nh"]
+[ext_resource type="Texture2D" uid="uid://32spmb5i76w5" path="res://player/sprites/SWAT_soldier/swat_idle_v05_61.png" id="288_xi6rl"]
+[ext_resource type="Texture2D" uid="uid://dw2syymof0mio" path="res://player/sprites/SWAT_soldier/swat_idle_v05_62.png" id="289_y5qc7"]
+[ext_resource type="Texture2D" uid="uid://dtsjilcqgcqw4" path="res://player/sprites/SWAT_soldier/swat_idle_v05_63.png" id="290_a7ucu"]
+[ext_resource type="Texture2D" uid="uid://0xlpkafloiha" path="res://player/sprites/SWAT_soldier/swat_idle_v05_64.png" id="291_63ddj"]
+[ext_resource type="Texture2D" uid="uid://dhh14ywbla7ou" path="res://player/sprites/SWAT_soldier/swat_idle_v05_65.png" id="292_vsh7e"]
+[ext_resource type="Texture2D" uid="uid://b0msp3p7x7x2v" path="res://player/sprites/SWAT_soldier/swat_idle_v05_66.png" id="293_4cwe0"]
+[ext_resource type="Texture2D" uid="uid://cpjrikotwhvb" path="res://player/sprites/SWAT_soldier/swat_idle_v05_67.png" id="294_ryupo"]
+[ext_resource type="Texture2D" uid="uid://vrlku0kcbgan" path="res://player/sprites/SWAT_soldier/swat_idle_v05_68.png" id="295_bn508"]
+[ext_resource type="Texture2D" uid="uid://cixft6wkagw7d" path="res://player/sprites/SWAT_soldier/swat_idle_v05_69.png" id="296_w5by5"]
+[ext_resource type="Texture2D" uid="uid://dhsngtboyxdrw" path="res://player/sprites/SWAT_soldier/swat_idle_v05_70.png" id="297_0ddmc"]
+[ext_resource type="Texture2D" uid="uid://6t70thhtu7ey" path="res://player/sprites/SWAT_soldier/swat_idle_v05_71.png" id="298_m7vcu"]
+[ext_resource type="Texture2D" uid="uid://3qturr84xotp" path="res://player/sprites/SWAT_soldier/swat_idle_v05_72.png" id="299_vgs2b"]
+[ext_resource type="Texture2D" uid="uid://b10qao0hdm632" path="res://player/sprites/SWAT_soldier/swat_idle_v05_73.png" id="300_u00g3"]
+[ext_resource type="Texture2D" uid="uid://yiflow1i0oyv" path="res://player/sprites/SWAT_soldier/swat_idle_v05_74.png" id="301_60u4g"]
+[ext_resource type="Texture2D" uid="uid://bqgb6uqhkgrwh" path="res://player/sprites/SWAT_soldier/swat_idle_v03_00.png" id="302_dc6kg"]
+[ext_resource type="Texture2D" uid="uid://b7ly3tsttqghk" path="res://player/sprites/SWAT_soldier/swat_idle_v03_01.png" id="303_tqoud"]
+[ext_resource type="Texture2D" uid="uid://c8bxw5xo8fq56" path="res://player/sprites/SWAT_soldier/swat_idle_v03_02.png" id="304_yrdf1"]
+[ext_resource type="Texture2D" uid="uid://38hh21ut8s22" path="res://player/sprites/SWAT_soldier/swat_idle_v03_03.png" id="305_ja8np"]
+[ext_resource type="Texture2D" uid="uid://cr2m2fh3jxaqj" path="res://player/sprites/SWAT_soldier/swat_idle_v03_04.png" id="306_026e5"]
+[ext_resource type="Texture2D" uid="uid://uhirukacmsfr" path="res://player/sprites/SWAT_soldier/swat_idle_v03_05.png" id="307_dixe3"]
+[ext_resource type="Texture2D" uid="uid://djyi7qjvxm6l6" path="res://player/sprites/SWAT_soldier/swat_idle_v03_06.png" id="308_2lcff"]
+[ext_resource type="Texture2D" uid="uid://c6jn66yrldw08" path="res://player/sprites/SWAT_soldier/swat_idle_v03_07.png" id="309_3ojox"]
+[ext_resource type="Texture2D" uid="uid://dlnf1p4rkniey" path="res://player/sprites/SWAT_soldier/swat_idle_v03_08.png" id="310_imkb5"]
+[ext_resource type="Texture2D" uid="uid://cqfc0gxu04s2v" path="res://player/sprites/SWAT_soldier/swat_idle_v03_09.png" id="311_4s24x"]
+[ext_resource type="Texture2D" uid="uid://co3b0uihhawv2" path="res://player/sprites/SWAT_soldier/swat_idle_v03_10.png" id="312_80lhm"]
+[ext_resource type="Texture2D" uid="uid://225loc5s1a6v" path="res://player/sprites/SWAT_soldier/swat_idle_v03_11.png" id="313_eigyh"]
+[ext_resource type="Texture2D" uid="uid://cbqwgfh10dq21" path="res://player/sprites/SWAT_soldier/swat_idle_v03_12.png" id="314_flggl"]
+[ext_resource type="Texture2D" uid="uid://djv0nfjkrbj7i" path="res://player/sprites/SWAT_soldier/swat_idle_v03_13.png" id="315_u5uxx"]
+[ext_resource type="Texture2D" uid="uid://dldxbrj45v14l" path="res://player/sprites/SWAT_soldier/swat_idle_v03_14.png" id="316_dhslm"]
+[ext_resource type="Texture2D" uid="uid://did3lw6jrb7mo" path="res://player/sprites/SWAT_soldier/swat_idle_v03_15.png" id="317_iix0a"]
+[ext_resource type="Texture2D" uid="uid://b46gd0f8hssfv" path="res://player/sprites/SWAT_soldier/swat_idle_v03_16.png" id="318_weyrk"]
+[ext_resource type="Texture2D" uid="uid://bk4rup5xc8t1w" path="res://player/sprites/SWAT_soldier/swat_idle_v03_17.png" id="319_i7ifx"]
+[ext_resource type="Texture2D" uid="uid://c72lmo5jmhv0t" path="res://player/sprites/SWAT_soldier/swat_idle_v03_18.png" id="320_yn5xx"]
+[ext_resource type="Texture2D" uid="uid://drd2gv54jm2v8" path="res://player/sprites/SWAT_soldier/swat_idle_v03_19.png" id="321_iuck3"]
+[ext_resource type="Texture2D" uid="uid://dwhujyoqrwht0" path="res://player/sprites/SWAT_soldier/swat_idle_v03_20.png" id="322_tjjjw"]
+[ext_resource type="Texture2D" uid="uid://c058bxk5x6obp" path="res://player/sprites/SWAT_soldier/swat_idle_v03_21.png" id="323_lpg2g"]
+[ext_resource type="Texture2D" uid="uid://bmho7pmvoysj4" path="res://player/sprites/SWAT_soldier/swat_idle_v03_22.png" id="324_es64m"]
+[ext_resource type="Texture2D" uid="uid://cqvtikgg4n0hn" path="res://player/sprites/SWAT_soldier/swat_idle_v03_23.png" id="325_bkser"]
+[ext_resource type="Texture2D" uid="uid://5m0vp41qt654" path="res://player/sprites/SWAT_soldier/swat_idle_v03_24.png" id="326_br27o"]
+[ext_resource type="Texture2D" uid="uid://cgavwjbvwj51h" path="res://player/sprites/SWAT_soldier/swat_idle_v03_25.png" id="327_4oxux"]
+[ext_resource type="Texture2D" uid="uid://2s4qamuicipb" path="res://player/sprites/SWAT_soldier/swat_idle_v03_26.png" id="328_b6yyg"]
+[ext_resource type="Texture2D" uid="uid://bt3qqr1dhp6aj" path="res://player/sprites/SWAT_soldier/swat_idle_v03_27.png" id="329_st6kq"]
+[ext_resource type="Texture2D" uid="uid://dgf2ds2l1pa67" path="res://player/sprites/SWAT_soldier/swat_idle_v03_28.png" id="330_pp24l"]
+[ext_resource type="Texture2D" uid="uid://bylmi5e3pscap" path="res://player/sprites/SWAT_soldier/swat_idle_v03_29.png" id="331_7gh83"]
+[ext_resource type="Texture2D" uid="uid://cevv03e40w8pm" path="res://player/sprites/SWAT_soldier/swat_idle_v03_30.png" id="332_oxlva"]
+[ext_resource type="Texture2D" uid="uid://dydt8f5xipgx4" path="res://player/sprites/SWAT_soldier/swat_idle_v03_31.png" id="333_kh7b0"]
+[ext_resource type="Texture2D" uid="uid://klu2g4fvlsq5" path="res://player/sprites/SWAT_soldier/swat_idle_v03_32.png" id="334_gn5kq"]
+[ext_resource type="Texture2D" uid="uid://elfwruobdbpd" path="res://player/sprites/SWAT_soldier/swat_idle_v03_33.png" id="335_foxap"]
+[ext_resource type="Texture2D" uid="uid://dg65cho5y8xjr" path="res://player/sprites/SWAT_soldier/swat_idle_v03_34.png" id="336_7xhvx"]
+[ext_resource type="Texture2D" uid="uid://dq2wg47lfu5ig" path="res://player/sprites/SWAT_soldier/swat_idle_v03_35.png" id="337_8bxht"]
+[ext_resource type="Texture2D" uid="uid://b1ba0ogvm2aqq" path="res://player/sprites/SWAT_soldier/swat_idle_v03_36.png" id="338_5dxhu"]
+[ext_resource type="Texture2D" uid="uid://b7ocywy5m6hbl" path="res://player/sprites/SWAT_soldier/swat_idle_v03_37.png" id="339_elxn3"]
+[ext_resource type="Texture2D" uid="uid://bwc18yfugu3i" path="res://player/sprites/SWAT_soldier/swat_idle_v03_38.png" id="340_t45ym"]
+[ext_resource type="Texture2D" uid="uid://b3om51k32ctyp" path="res://player/sprites/SWAT_soldier/swat_idle_v03_39.png" id="341_e1uxr"]
+[ext_resource type="Texture2D" uid="uid://gnixx6q8k3em" path="res://player/sprites/SWAT_soldier/swat_idle_v03_40.png" id="342_lrcsf"]
+[ext_resource type="Texture2D" uid="uid://c7cxe3yggsnip" path="res://player/sprites/SWAT_soldier/swat_idle_v03_41.png" id="343_50jrq"]
+[ext_resource type="Texture2D" uid="uid://dqj2b8scoscnm" path="res://player/sprites/SWAT_soldier/swat_idle_v03_42.png" id="344_1tran"]
+[ext_resource type="Texture2D" uid="uid://fthpnuwdb7wb" path="res://player/sprites/SWAT_soldier/swat_idle_v03_43.png" id="345_amc3b"]
+[ext_resource type="Texture2D" uid="uid://ifnh5olf8mbi" path="res://player/sprites/SWAT_soldier/swat_idle_v03_44.png" id="346_7lmc1"]
+[ext_resource type="Texture2D" uid="uid://bbnyvoeqkue87" path="res://player/sprites/SWAT_soldier/swat_idle_v03_45.png" id="347_nm6p7"]
+[ext_resource type="Texture2D" uid="uid://cavxs3mq4awnc" path="res://player/sprites/SWAT_soldier/swat_idle_v03_46.png" id="348_g4xcl"]
+[ext_resource type="Texture2D" uid="uid://dwldmfk6alat6" path="res://player/sprites/SWAT_soldier/swat_idle_v03_47.png" id="349_0ypoo"]
+[ext_resource type="Texture2D" uid="uid://ctav8xa8bulul" path="res://player/sprites/SWAT_soldier/swat_idle_v03_48.png" id="350_quc5m"]
+[ext_resource type="Texture2D" uid="uid://jqy5idy6plfo" path="res://player/sprites/SWAT_soldier/swat_idle_v03_49.png" id="351_kncep"]
+[ext_resource type="Texture2D" uid="uid://ct5g7shis8tw4" path="res://player/sprites/SWAT_soldier/swat_idle_v03_50.png" id="352_2egsp"]
+[ext_resource type="Texture2D" uid="uid://x8ei4s8jxh3e" path="res://player/sprites/SWAT_soldier/swat_idle_v03_51.png" id="353_sn2mm"]
+[ext_resource type="Texture2D" uid="uid://vufgvpg7o5md" path="res://player/sprites/SWAT_soldier/swat_idle_v03_52.png" id="354_wjxpk"]
+[ext_resource type="Texture2D" uid="uid://piftl4nai24" path="res://player/sprites/SWAT_soldier/swat_idle_v03_53.png" id="355_crmf4"]
+[ext_resource type="Texture2D" uid="uid://ck4kqecoqb8vj" path="res://player/sprites/SWAT_soldier/swat_idle_v03_54.png" id="356_jrgn7"]
+[ext_resource type="Texture2D" uid="uid://dfhnlu5us6qlv" path="res://player/sprites/SWAT_soldier/swat_idle_v03_55.png" id="357_hd3ud"]
+[ext_resource type="Texture2D" uid="uid://3rlrui1jclrl" path="res://player/sprites/SWAT_soldier/swat_idle_v03_56.png" id="358_v8ciu"]
+[ext_resource type="Texture2D" uid="uid://dy20d4isk5wnu" path="res://player/sprites/SWAT_soldier/swat_idle_v03_57.png" id="359_a8ee7"]
+[ext_resource type="Texture2D" uid="uid://xtf2vllltimr" path="res://player/sprites/SWAT_soldier/swat_idle_v03_58.png" id="360_7dsnf"]
+[ext_resource type="Texture2D" uid="uid://cw8x5hw8fulr5" path="res://player/sprites/SWAT_soldier/swat_idle_v03_59.png" id="361_dwgx7"]
+[ext_resource type="Texture2D" uid="uid://bgricqth5k3j6" path="res://player/sprites/SWAT_soldier/swat_idle_v03_60.png" id="362_wdw4f"]
+[ext_resource type="Texture2D" uid="uid://bsfurjk3ttqdy" path="res://player/sprites/SWAT_soldier/swat_idle_v03_61.png" id="363_kbm5u"]
+[ext_resource type="Texture2D" uid="uid://sjmj5wlixxwh" path="res://player/sprites/SWAT_soldier/swat_idle_v03_62.png" id="364_tx24i"]
+[ext_resource type="Texture2D" uid="uid://diy5l8siis8rb" path="res://player/sprites/SWAT_soldier/swat_idle_v03_63.png" id="365_skuvv"]
+[ext_resource type="Texture2D" uid="uid://c5ne7vnj0c6nv" path="res://player/sprites/SWAT_soldier/swat_idle_v03_64.png" id="366_e2pbp"]
+[ext_resource type="Texture2D" uid="uid://40y3h0dv4yya" path="res://player/sprites/SWAT_soldier/swat_idle_v03_65.png" id="367_hgs4q"]
+[ext_resource type="Texture2D" uid="uid://cjsxb8ola4gnl" path="res://player/sprites/SWAT_soldier/swat_idle_v03_66.png" id="368_yjghl"]
+[ext_resource type="Texture2D" uid="uid://cnostnkwd8h06" path="res://player/sprites/SWAT_soldier/swat_idle_v03_67.png" id="369_msl2a"]
+[ext_resource type="Texture2D" uid="uid://bhwa3otdnmkxu" path="res://player/sprites/SWAT_soldier/swat_idle_v03_68.png" id="370_lguvm"]
+[ext_resource type="Texture2D" uid="uid://cxse2ya275mct" path="res://player/sprites/SWAT_soldier/swat_idle_v03_69.png" id="371_hun5e"]
+[ext_resource type="Texture2D" uid="uid://bnbhqbrd0brf" path="res://player/sprites/SWAT_soldier/swat_idle_v03_70.png" id="372_w1g2t"]
+[ext_resource type="Texture2D" uid="uid://y1y8nd6fbmyo" path="res://player/sprites/SWAT_soldier/swat_idle_v03_71.png" id="373_ojsox"]
+[ext_resource type="Texture2D" uid="uid://blb2ernpidrnq" path="res://player/sprites/SWAT_soldier/swat_idle_v03_72.png" id="374_qu2bu"]
+[ext_resource type="Texture2D" uid="uid://dj4uoxayfw3y" path="res://player/sprites/SWAT_soldier/swat_idle_v03_73.png" id="375_7parc"]
+[ext_resource type="Texture2D" uid="uid://s0o6e3mg86s5" path="res://player/sprites/SWAT_soldier/swat_idle_v03_74.png" id="376_v4ftr"]
+[ext_resource type="Texture2D" uid="uid://6yp7al8405mq" path="res://player/sprites/SWAT_soldier/swat_idle_v07_00.png" id="377_ad270"]
+[ext_resource type="Texture2D" uid="uid://b4tgxdc0idn6o" path="res://player/sprites/SWAT_soldier/swat_idle_v07_01.png" id="378_7gao2"]
+[ext_resource type="Texture2D" uid="uid://d2haolc4xfsyr" path="res://player/sprites/SWAT_soldier/swat_idle_v07_02.png" id="379_py4lv"]
+[ext_resource type="Texture2D" uid="uid://cp3h4r8l7cqh5" path="res://player/sprites/SWAT_soldier/swat_idle_v07_03.png" id="380_d0ks2"]
+[ext_resource type="Texture2D" uid="uid://cqmwf30nhc6vt" path="res://player/sprites/SWAT_soldier/swat_idle_v07_04.png" id="381_p3xsh"]
+[ext_resource type="Texture2D" uid="uid://mpyholjda8jk" path="res://player/sprites/SWAT_soldier/swat_idle_v07_05.png" id="382_y478r"]
+[ext_resource type="Texture2D" uid="uid://7gk4gelsv15q" path="res://player/sprites/SWAT_soldier/swat_idle_v07_06.png" id="383_rmswq"]
+[ext_resource type="Texture2D" uid="uid://uvx2cig68e0n" path="res://player/sprites/SWAT_soldier/swat_idle_v07_07.png" id="384_ssk1g"]
+[ext_resource type="Texture2D" uid="uid://bsl7bu6nivgaj" path="res://player/sprites/SWAT_soldier/swat_idle_v07_08.png" id="385_tv5xm"]
+[ext_resource type="Texture2D" uid="uid://q11us1gsw6sn" path="res://player/sprites/SWAT_soldier/swat_idle_v07_09.png" id="386_w10vp"]
+[ext_resource type="Texture2D" uid="uid://jyysemvyglr1" path="res://player/sprites/SWAT_soldier/swat_idle_v07_10.png" id="387_ydroa"]
+[ext_resource type="Texture2D" uid="uid://baw8kx737s0c1" path="res://player/sprites/SWAT_soldier/swat_idle_v07_11.png" id="388_vs07p"]
+[ext_resource type="Texture2D" uid="uid://cwuhugi45xq3c" path="res://player/sprites/SWAT_soldier/swat_idle_v07_12.png" id="389_sjado"]
+[ext_resource type="Texture2D" uid="uid://bcrqt5rc5lciv" path="res://player/sprites/SWAT_soldier/swat_idle_v07_13.png" id="390_i2752"]
+[ext_resource type="Texture2D" uid="uid://cqal8ncpdlnyh" path="res://player/sprites/SWAT_soldier/swat_idle_v07_14.png" id="391_deede"]
+[ext_resource type="Texture2D" uid="uid://dh6wbve5fxrqi" path="res://player/sprites/SWAT_soldier/swat_idle_v07_15.png" id="392_cmc1t"]
+[ext_resource type="Texture2D" uid="uid://0c4fqn71qflt" path="res://player/sprites/SWAT_soldier/swat_idle_v07_16.png" id="393_5gt6v"]
+[ext_resource type="Texture2D" uid="uid://e7rchgeteqk8" path="res://player/sprites/SWAT_soldier/swat_idle_v07_17.png" id="394_js0ev"]
+[ext_resource type="Texture2D" uid="uid://c7r6qvjmmq6ah" path="res://player/sprites/SWAT_soldier/swat_idle_v07_18.png" id="395_x65ci"]
+[ext_resource type="Texture2D" uid="uid://w1xftgf2hd8v" path="res://player/sprites/SWAT_soldier/swat_idle_v07_19.png" id="396_d7cdv"]
+[ext_resource type="Texture2D" uid="uid://tng7yxeluq12" path="res://player/sprites/SWAT_soldier/swat_idle_v07_20.png" id="397_gju6d"]
+[ext_resource type="Texture2D" uid="uid://dskq6jpwujpeu" path="res://player/sprites/SWAT_soldier/swat_idle_v07_21.png" id="398_c6js7"]
+[ext_resource type="Texture2D" uid="uid://d32pbedpb37iu" path="res://player/sprites/SWAT_soldier/swat_idle_v07_22.png" id="399_o8ka1"]
+[ext_resource type="Texture2D" uid="uid://dbgowicuxhq03" path="res://player/sprites/SWAT_soldier/swat_idle_v07_23.png" id="400_sckft"]
+[ext_resource type="Texture2D" uid="uid://0alkytnvmtbg" path="res://player/sprites/SWAT_soldier/swat_idle_v07_24.png" id="401_s5epi"]
+[ext_resource type="Texture2D" uid="uid://cn66o318bnblr" path="res://player/sprites/SWAT_soldier/swat_idle_v07_25.png" id="402_mfdar"]
+[ext_resource type="Texture2D" uid="uid://0pj6lprxfsrq" path="res://player/sprites/SWAT_soldier/swat_idle_v07_26.png" id="403_eot5v"]
+[ext_resource type="Texture2D" uid="uid://byt5g8pcw0pij" path="res://player/sprites/SWAT_soldier/swat_idle_v07_27.png" id="404_fa602"]
+[ext_resource type="Texture2D" uid="uid://puhiekr5tjoy" path="res://player/sprites/SWAT_soldier/swat_idle_v07_28.png" id="405_oruai"]
+[ext_resource type="Texture2D" uid="uid://dnsxvnthlg77a" path="res://player/sprites/SWAT_soldier/swat_idle_v07_29.png" id="406_fqh4h"]
+[ext_resource type="Texture2D" uid="uid://b6vcjis4ibw61" path="res://player/sprites/SWAT_soldier/swat_idle_v07_30.png" id="407_o74fd"]
+[ext_resource type="Texture2D" uid="uid://cw2yj734osvaa" path="res://player/sprites/SWAT_soldier/swat_idle_v07_31.png" id="408_ovyk7"]
+[ext_resource type="Texture2D" uid="uid://btdav2cyrt18h" path="res://player/sprites/SWAT_soldier/swat_idle_v07_32.png" id="409_amxor"]
+[ext_resource type="Texture2D" uid="uid://ba6me371dtb3f" path="res://player/sprites/SWAT_soldier/swat_idle_v07_33.png" id="410_nsg2t"]
+[ext_resource type="Texture2D" uid="uid://dd33g4yhk22l2" path="res://player/sprites/SWAT_soldier/swat_idle_v07_34.png" id="411_0rgl6"]
+[ext_resource type="Texture2D" uid="uid://661aen0r83x6" path="res://player/sprites/SWAT_soldier/swat_idle_v07_35.png" id="412_unoy1"]
+[ext_resource type="Texture2D" uid="uid://demx5se1k4bje" path="res://player/sprites/SWAT_soldier/swat_idle_v07_36.png" id="413_lxxae"]
+[ext_resource type="Texture2D" uid="uid://dgeautn4waiim" path="res://player/sprites/SWAT_soldier/swat_idle_v07_37.png" id="414_g6b22"]
+[ext_resource type="Texture2D" uid="uid://d3pceqld1ttr4" path="res://player/sprites/SWAT_soldier/swat_idle_v07_38.png" id="415_uec7s"]
+[ext_resource type="Texture2D" uid="uid://dy3pnl7mvwdng" path="res://player/sprites/SWAT_soldier/swat_idle_v07_39.png" id="416_m3tur"]
+[ext_resource type="Texture2D" uid="uid://cu4yjwkeoulfx" path="res://player/sprites/SWAT_soldier/swat_idle_v07_40.png" id="417_tpa1b"]
+[ext_resource type="Texture2D" uid="uid://clq2jdo3p7x8s" path="res://player/sprites/SWAT_soldier/swat_idle_v07_41.png" id="418_qqy8u"]
+[ext_resource type="Texture2D" uid="uid://babitvcqlyqln" path="res://player/sprites/SWAT_soldier/swat_idle_v07_42.png" id="419_v3j5c"]
+[ext_resource type="Texture2D" uid="uid://d1fu5tplhf46t" path="res://player/sprites/SWAT_soldier/swat_idle_v07_43.png" id="420_p5at5"]
+[ext_resource type="Texture2D" uid="uid://c1i833b8l6lur" path="res://player/sprites/SWAT_soldier/swat_idle_v07_44.png" id="421_yy42w"]
+[ext_resource type="Texture2D" uid="uid://bt5vd4k2mbgce" path="res://player/sprites/SWAT_soldier/swat_idle_v07_45.png" id="422_6bvgo"]
+[ext_resource type="Texture2D" uid="uid://cclm0cvkrwmcv" path="res://player/sprites/SWAT_soldier/swat_idle_v07_46.png" id="423_v770q"]
+[ext_resource type="Texture2D" uid="uid://bychqlbp3havb" path="res://player/sprites/SWAT_soldier/swat_idle_v07_47.png" id="424_i1rvb"]
+[ext_resource type="Texture2D" uid="uid://cxir8lljjvj5n" path="res://player/sprites/SWAT_soldier/swat_idle_v07_48.png" id="425_w7cei"]
+[ext_resource type="Texture2D" uid="uid://8w1ckwh06d1b" path="res://player/sprites/SWAT_soldier/swat_idle_v07_49.png" id="426_8gnhb"]
+[ext_resource type="Texture2D" uid="uid://by48v8rio87f0" path="res://player/sprites/SWAT_soldier/swat_idle_v07_50.png" id="427_pibct"]
+[ext_resource type="Texture2D" uid="uid://dt772ss7k7hji" path="res://player/sprites/SWAT_soldier/swat_idle_v07_51.png" id="428_7nlw5"]
+[ext_resource type="Texture2D" uid="uid://mjqo2tj26vol" path="res://player/sprites/SWAT_soldier/swat_idle_v07_52.png" id="429_lxd0f"]
+[ext_resource type="Texture2D" uid="uid://b25hxouhpcvla" path="res://player/sprites/SWAT_soldier/swat_idle_v07_53.png" id="430_lj8ub"]
+[ext_resource type="Texture2D" uid="uid://bp5mqcwtv6noi" path="res://player/sprites/SWAT_soldier/swat_idle_v07_54.png" id="431_femsm"]
+[ext_resource type="Texture2D" uid="uid://tjr7ufd0jv2x" path="res://player/sprites/SWAT_soldier/swat_idle_v07_55.png" id="432_tmri5"]
+[ext_resource type="Texture2D" uid="uid://dhmlj5k2po7s6" path="res://player/sprites/SWAT_soldier/swat_idle_v07_56.png" id="433_ug36m"]
+[ext_resource type="Texture2D" uid="uid://de0as8lqrv3yb" path="res://player/sprites/SWAT_soldier/swat_idle_v07_57.png" id="434_e2p1f"]
+[ext_resource type="Texture2D" uid="uid://bmd0x4x881huh" path="res://player/sprites/SWAT_soldier/swat_idle_v07_58.png" id="435_ly4j6"]
+[ext_resource type="Texture2D" uid="uid://dbvqctuej3e0w" path="res://player/sprites/SWAT_soldier/swat_idle_v07_59.png" id="436_lt5f2"]
+[ext_resource type="Texture2D" uid="uid://c1jjc5u2adhgc" path="res://player/sprites/SWAT_soldier/swat_idle_v07_60.png" id="437_ovvp2"]
+[ext_resource type="Texture2D" uid="uid://bcir0y4a6w72v" path="res://player/sprites/SWAT_soldier/swat_idle_v07_61.png" id="438_x2qjg"]
+[ext_resource type="Texture2D" uid="uid://cvmjuxngqlh7p" path="res://player/sprites/SWAT_soldier/swat_idle_v07_62.png" id="439_k8etc"]
+[ext_resource type="Texture2D" uid="uid://chxi4ioys4spr" path="res://player/sprites/SWAT_soldier/swat_idle_v07_63.png" id="440_jbewc"]
+[ext_resource type="Texture2D" uid="uid://c82o61ntrckvs" path="res://player/sprites/SWAT_soldier/swat_idle_v07_64.png" id="441_vur68"]
+[ext_resource type="Texture2D" uid="uid://baojkslr551w4" path="res://player/sprites/SWAT_soldier/swat_idle_v07_65.png" id="442_fhe70"]
+[ext_resource type="Texture2D" uid="uid://7iwtlodsayyc" path="res://player/sprites/SWAT_soldier/swat_idle_v07_66.png" id="443_ikfta"]
+[ext_resource type="Texture2D" uid="uid://01e0uwrokwi0" path="res://player/sprites/SWAT_soldier/swat_idle_v07_67.png" id="444_u4tap"]
+[ext_resource type="Texture2D" uid="uid://h8c7rymhjaxp" path="res://player/sprites/SWAT_soldier/swat_idle_v07_68.png" id="445_eyn1k"]
+[ext_resource type="Texture2D" uid="uid://cn8jril5ccdaf" path="res://player/sprites/SWAT_soldier/swat_idle_v07_69.png" id="446_aq3lk"]
+[ext_resource type="Texture2D" uid="uid://4qi6gk5ghia3" path="res://player/sprites/SWAT_soldier/swat_idle_v07_70.png" id="447_47hhq"]
+[ext_resource type="Texture2D" uid="uid://f7g40brsgqot" path="res://player/sprites/SWAT_soldier/swat_idle_v07_71.png" id="448_6yjxb"]
+[ext_resource type="Texture2D" uid="uid://b2gdftwbju117" path="res://player/sprites/SWAT_soldier/swat_idle_v07_72.png" id="449_ou5gx"]
+[ext_resource type="Texture2D" uid="uid://cdekrm0nwbfux" path="res://player/sprites/SWAT_soldier/swat_idle_v07_73.png" id="450_3srqf"]
+[ext_resource type="Texture2D" uid="uid://b407umtr3sclg" path="res://player/sprites/SWAT_soldier/swat_idle_v07_74.png" id="451_wbtqf"]
+[ext_resource type="Texture2D" uid="uid://dt02e1yc01d7e" path="res://player/sprites/SWAT_soldier/swat_idle_v01_00.png" id="452_oabyi"]
+[ext_resource type="Texture2D" uid="uid://dsslfq66t676d" path="res://player/sprites/SWAT_soldier/swat_idle_v01_01.png" id="453_ukpk7"]
+[ext_resource type="Texture2D" uid="uid://bm3id5mx2nqoa" path="res://player/sprites/SWAT_soldier/swat_idle_v01_02.png" id="454_m1ge7"]
+[ext_resource type="Texture2D" uid="uid://bbg4awwo800qd" path="res://player/sprites/SWAT_soldier/swat_idle_v01_03.png" id="455_nhj33"]
+[ext_resource type="Texture2D" uid="uid://lvr40jo8jfny" path="res://player/sprites/SWAT_soldier/swat_idle_v01_04.png" id="456_m5k8o"]
+[ext_resource type="Texture2D" uid="uid://d1w16fa3up467" path="res://player/sprites/SWAT_soldier/swat_idle_v01_05.png" id="457_0uryu"]
+[ext_resource type="Texture2D" uid="uid://c238jprso2ujq" path="res://player/sprites/SWAT_soldier/swat_idle_v01_06.png" id="458_h601n"]
+[ext_resource type="Texture2D" uid="uid://cbjmu0lu05o0t" path="res://player/sprites/SWAT_soldier/swat_idle_v01_07.png" id="459_kspuy"]
+[ext_resource type="Texture2D" uid="uid://cf05qm15xkhdi" path="res://player/sprites/SWAT_soldier/swat_idle_v01_08.png" id="460_gdmqc"]
+[ext_resource type="Texture2D" uid="uid://ca4qv4h5qx6if" path="res://player/sprites/SWAT_soldier/swat_idle_v01_09.png" id="461_sfqad"]
+[ext_resource type="Texture2D" uid="uid://dquqetjx55teh" path="res://player/sprites/SWAT_soldier/swat_idle_v01_10.png" id="462_lfaaj"]
+[ext_resource type="Texture2D" uid="uid://broxpicqax6ef" path="res://player/sprites/SWAT_soldier/swat_idle_v01_11.png" id="463_uouoe"]
+[ext_resource type="Texture2D" uid="uid://c6qm6wp6cjwc4" path="res://player/sprites/SWAT_soldier/swat_idle_v01_12.png" id="464_w1opl"]
+[ext_resource type="Texture2D" uid="uid://cxf6s6bvu5nrq" path="res://player/sprites/SWAT_soldier/swat_idle_v01_13.png" id="465_kffs4"]
+[ext_resource type="Texture2D" uid="uid://dss1xgqjwg2hu" path="res://player/sprites/SWAT_soldier/swat_idle_v01_14.png" id="466_1qnoi"]
+[ext_resource type="Texture2D" uid="uid://crbgs0fxu8ymb" path="res://player/sprites/SWAT_soldier/swat_idle_v01_15.png" id="467_vvysj"]
+[ext_resource type="Texture2D" uid="uid://p35017o0n8yd" path="res://player/sprites/SWAT_soldier/swat_idle_v01_16.png" id="468_nfwif"]
+[ext_resource type="Texture2D" uid="uid://b7h1cnk7fhhu" path="res://player/sprites/SWAT_soldier/swat_idle_v01_17.png" id="469_jt8h5"]
+[ext_resource type="Texture2D" uid="uid://cuemn0youm76x" path="res://player/sprites/SWAT_soldier/swat_idle_v01_18.png" id="470_1i47f"]
+[ext_resource type="Texture2D" uid="uid://bhh83o2lkqgqw" path="res://player/sprites/SWAT_soldier/swat_idle_v01_19.png" id="471_b6151"]
+[ext_resource type="Texture2D" uid="uid://ba1xlo7l15xa2" path="res://player/sprites/SWAT_soldier/swat_idle_v01_20.png" id="472_eou5m"]
+[ext_resource type="Texture2D" uid="uid://cvadylmpqken0" path="res://player/sprites/SWAT_soldier/swat_idle_v01_21.png" id="473_lxhot"]
+[ext_resource type="Texture2D" uid="uid://d14yn4o5e0xf6" path="res://player/sprites/SWAT_soldier/swat_idle_v01_22.png" id="474_i74bg"]
+[ext_resource type="Texture2D" uid="uid://bu6emh87u1wtj" path="res://player/sprites/SWAT_soldier/swat_idle_v01_23.png" id="475_5piq0"]
+[ext_resource type="Texture2D" uid="uid://rpo06xfkcydi" path="res://player/sprites/SWAT_soldier/swat_idle_v01_24.png" id="476_l1sga"]
+[ext_resource type="Texture2D" uid="uid://c5xoeitdnjtjh" path="res://player/sprites/SWAT_soldier/swat_idle_v01_25.png" id="477_fs1c4"]
+[ext_resource type="Texture2D" uid="uid://bh03lcwqfai7s" path="res://player/sprites/SWAT_soldier/swat_idle_v01_26.png" id="478_ekb3a"]
+[ext_resource type="Texture2D" uid="uid://67b5qtxnt8fe" path="res://player/sprites/SWAT_soldier/swat_idle_v01_27.png" id="479_hwl6j"]
+[ext_resource type="Texture2D" uid="uid://bebqyd7jl4gf7" path="res://player/sprites/SWAT_soldier/swat_idle_v01_28.png" id="480_xj3mq"]
+[ext_resource type="Texture2D" uid="uid://cbgop6203av7o" path="res://player/sprites/SWAT_soldier/swat_idle_v01_29.png" id="481_if0el"]
+[ext_resource type="Texture2D" uid="uid://be54wn2e0jc7u" path="res://player/sprites/SWAT_soldier/swat_idle_v01_30.png" id="482_34o2v"]
+[ext_resource type="Texture2D" uid="uid://s8kmlhdn26qn" path="res://player/sprites/SWAT_soldier/swat_idle_v01_31.png" id="483_m7evo"]
+[ext_resource type="Texture2D" uid="uid://dkek4ppkdlxf0" path="res://player/sprites/SWAT_soldier/swat_idle_v01_32.png" id="484_8n3aa"]
+[ext_resource type="Texture2D" uid="uid://de5k53i87m1ay" path="res://player/sprites/SWAT_soldier/swat_idle_v01_33.png" id="485_voli5"]
+[ext_resource type="Texture2D" uid="uid://dixmeju4ka8i3" path="res://player/sprites/SWAT_soldier/swat_idle_v01_34.png" id="486_g5snn"]
+[ext_resource type="Texture2D" uid="uid://chceu3jvi2kuh" path="res://player/sprites/SWAT_soldier/swat_idle_v01_35.png" id="487_x66ub"]
+[ext_resource type="Texture2D" uid="uid://deiwryy0v2dvv" path="res://player/sprites/SWAT_soldier/swat_idle_v01_36.png" id="488_g0l8v"]
+[ext_resource type="Texture2D" uid="uid://cp3h4lcgopurg" path="res://player/sprites/SWAT_soldier/swat_idle_v01_37.png" id="489_h7wyu"]
+[ext_resource type="Texture2D" uid="uid://bf5gndcjjllst" path="res://player/sprites/SWAT_soldier/swat_idle_v01_38.png" id="490_8fto5"]
+[ext_resource type="Texture2D" uid="uid://cq1jsdy3rxjs3" path="res://player/sprites/SWAT_soldier/swat_idle_v01_39.png" id="491_ki7tr"]
+[ext_resource type="Texture2D" uid="uid://bj7v838knq1ae" path="res://player/sprites/SWAT_soldier/swat_idle_v01_40.png" id="492_bfn7g"]
+[ext_resource type="Texture2D" uid="uid://peq62fpep5b4" path="res://player/sprites/SWAT_soldier/swat_idle_v01_41.png" id="493_ixqvk"]
+[ext_resource type="Texture2D" uid="uid://bw6miou64wny8" path="res://player/sprites/SWAT_soldier/swat_idle_v01_42.png" id="494_ygho6"]
+[ext_resource type="Texture2D" uid="uid://84jblunir7lx" path="res://player/sprites/SWAT_soldier/swat_idle_v01_43.png" id="495_3lc0j"]
+[ext_resource type="Texture2D" uid="uid://ddmwp34ombkaf" path="res://player/sprites/SWAT_soldier/swat_idle_v01_44.png" id="496_p8lc8"]
+[ext_resource type="Texture2D" uid="uid://buhnhy1byymw7" path="res://player/sprites/SWAT_soldier/swat_idle_v01_45.png" id="497_7px2h"]
+[ext_resource type="Texture2D" uid="uid://bn558r31cj803" path="res://player/sprites/SWAT_soldier/swat_idle_v01_46.png" id="498_d0of5"]
+[ext_resource type="Texture2D" uid="uid://dmse6rkoeg5gq" path="res://player/sprites/SWAT_soldier/swat_idle_v01_47.png" id="499_eyafg"]
+[ext_resource type="Texture2D" uid="uid://bc7sgbievxw6w" path="res://player/sprites/SWAT_soldier/swat_idle_v01_48.png" id="500_c0wfi"]
+[ext_resource type="Texture2D" uid="uid://cqiy4huk4juhl" path="res://player/sprites/SWAT_soldier/swat_idle_v01_49.png" id="501_fksxp"]
+[ext_resource type="Texture2D" uid="uid://b3p6fbdg0yrdb" path="res://player/sprites/SWAT_soldier/swat_idle_v01_50.png" id="502_tsf8t"]
+[ext_resource type="Texture2D" uid="uid://bl6jqu2axyn22" path="res://player/sprites/SWAT_soldier/swat_idle_v01_51.png" id="503_o5ptu"]
+[ext_resource type="Texture2D" uid="uid://c7jt1ifbaehj2" path="res://player/sprites/SWAT_soldier/swat_idle_v01_52.png" id="504_og78q"]
+[ext_resource type="Texture2D" uid="uid://daooiqwb6bq43" path="res://player/sprites/SWAT_soldier/swat_idle_v01_53.png" id="505_asom3"]
+[ext_resource type="Texture2D" uid="uid://cluw3nghnj15u" path="res://player/sprites/SWAT_soldier/swat_idle_v01_54.png" id="506_njrd3"]
+[ext_resource type="Texture2D" uid="uid://dqq1l371g0yb2" path="res://player/sprites/SWAT_soldier/swat_idle_v01_55.png" id="507_w1tw8"]
+[ext_resource type="Texture2D" uid="uid://ccgtlt3fut80w" path="res://player/sprites/SWAT_soldier/swat_idle_v01_56.png" id="508_i333d"]
+[ext_resource type="Texture2D" uid="uid://cxqqtueve4grg" path="res://player/sprites/SWAT_soldier/swat_idle_v01_57.png" id="509_7bgew"]
+[ext_resource type="Texture2D" uid="uid://ddlqsuwgojih" path="res://player/sprites/SWAT_soldier/swat_idle_v01_58.png" id="510_7cnf6"]
+[ext_resource type="Texture2D" uid="uid://dos556fsu3kwh" path="res://player/sprites/SWAT_soldier/swat_idle_v01_59.png" id="511_0hw7r"]
+[ext_resource type="Texture2D" uid="uid://by8clv5o5n5ta" path="res://player/sprites/SWAT_soldier/swat_idle_v01_60.png" id="512_d4w4o"]
+[ext_resource type="Texture2D" uid="uid://srcfaaob1cp3" path="res://player/sprites/SWAT_soldier/swat_idle_v01_61.png" id="513_so37v"]
+[ext_resource type="Texture2D" uid="uid://2hqfj5456sy3" path="res://player/sprites/SWAT_soldier/swat_idle_v01_62.png" id="514_jpbod"]
+[ext_resource type="Texture2D" uid="uid://dl473uiu00lbk" path="res://player/sprites/SWAT_soldier/swat_idle_v01_63.png" id="515_7spxs"]
+[ext_resource type="Texture2D" uid="uid://cq2t2mgggjre8" path="res://player/sprites/SWAT_soldier/swat_idle_v01_64.png" id="516_am4wa"]
+[ext_resource type="Texture2D" uid="uid://12dssoxx7sqn" path="res://player/sprites/SWAT_soldier/swat_idle_v01_65.png" id="517_gk28u"]
+[ext_resource type="Texture2D" uid="uid://ln3lic4vxvdv" path="res://player/sprites/SWAT_soldier/swat_idle_v01_66.png" id="518_tq0tk"]
+[ext_resource type="Texture2D" uid="uid://cib7fi4m6jugk" path="res://player/sprites/SWAT_soldier/swat_idle_v01_67.png" id="519_txs2b"]
+[ext_resource type="Texture2D" uid="uid://bkumnxe5no6j5" path="res://player/sprites/SWAT_soldier/swat_idle_v01_68.png" id="520_wudot"]
+[ext_resource type="Texture2D" uid="uid://q6ddd2kviht0" path="res://player/sprites/SWAT_soldier/swat_idle_v01_69.png" id="521_ts75g"]
+[ext_resource type="Texture2D" uid="uid://ewy5amqo2re0" path="res://player/sprites/SWAT_soldier/swat_idle_v01_70.png" id="522_o8igi"]
+[ext_resource type="Texture2D" uid="uid://biyl5oxh83krq" path="res://player/sprites/SWAT_soldier/swat_idle_v01_71.png" id="523_f6ra6"]
+[ext_resource type="Texture2D" uid="uid://x05la3rudlqa" path="res://player/sprites/SWAT_soldier/swat_idle_v01_72.png" id="524_a2wtu"]
+[ext_resource type="Texture2D" uid="uid://vo1hc0ldab8c" path="res://player/sprites/SWAT_soldier/swat_idle_v01_73.png" id="525_ybn0n"]
+[ext_resource type="Texture2D" uid="uid://dpl8acdvikwkc" path="res://player/sprites/SWAT_soldier/swat_idle_v01_74.png" id="526_6s70r"]
+[ext_resource type="Texture2D" uid="uid://cgqgvdb3em4pw" path="res://player/sprites/SWAT_soldier/swat_idle_v02_00.png" id="527_1d7aa"]
+[ext_resource type="Texture2D" uid="uid://cwobk1nnedifr" path="res://player/sprites/SWAT_soldier/swat_idle_v02_01.png" id="528_f7p8n"]
+[ext_resource type="Texture2D" uid="uid://c8jl220ellbwj" path="res://player/sprites/SWAT_soldier/swat_idle_v02_02.png" id="529_60wr1"]
+[ext_resource type="Texture2D" uid="uid://cals6yhswq1gr" path="res://player/sprites/SWAT_soldier/swat_idle_v02_03.png" id="530_m22ld"]
+[ext_resource type="Texture2D" uid="uid://cwngbtdwnig6x" path="res://player/sprites/SWAT_soldier/swat_idle_v02_04.png" id="531_3yjkj"]
+[ext_resource type="Texture2D" uid="uid://dnaooa3d0ruiv" path="res://player/sprites/SWAT_soldier/swat_idle_v02_05.png" id="532_4lt58"]
+[ext_resource type="Texture2D" uid="uid://dq2b0aowmjf4b" path="res://player/sprites/SWAT_soldier/swat_idle_v02_06.png" id="533_e4gyj"]
+[ext_resource type="Texture2D" uid="uid://c06hqckkifmyb" path="res://player/sprites/SWAT_soldier/swat_idle_v02_07.png" id="534_s0gcm"]
+[ext_resource type="Texture2D" uid="uid://vmrotdhdgoan" path="res://player/sprites/SWAT_soldier/swat_idle_v02_08.png" id="535_cglga"]
+[ext_resource type="Texture2D" uid="uid://b0rei0bu6cysc" path="res://player/sprites/SWAT_soldier/swat_idle_v02_09.png" id="536_idmq8"]
+[ext_resource type="Texture2D" uid="uid://xvdgamsnr5yw" path="res://player/sprites/SWAT_soldier/swat_idle_v02_10.png" id="537_wafa3"]
+[ext_resource type="Texture2D" uid="uid://dtyukr3s2ur4" path="res://player/sprites/SWAT_soldier/swat_idle_v02_11.png" id="538_p4f66"]
+[ext_resource type="Texture2D" uid="uid://o1duqb8c7p5e" path="res://player/sprites/SWAT_soldier/swat_idle_v02_12.png" id="539_sfhnp"]
+[ext_resource type="Texture2D" uid="uid://hr47h43ruppl" path="res://player/sprites/SWAT_soldier/swat_idle_v02_13.png" id="540_p6mej"]
+[ext_resource type="Texture2D" uid="uid://wgpsr27u4x5v" path="res://player/sprites/SWAT_soldier/swat_idle_v02_14.png" id="541_x2t5o"]
+[ext_resource type="Texture2D" uid="uid://bp1auxsb1jcl5" path="res://player/sprites/SWAT_soldier/swat_idle_v02_15.png" id="542_05gse"]
+[ext_resource type="Texture2D" uid="uid://bhixdvkxr2wvf" path="res://player/sprites/SWAT_soldier/swat_idle_v02_16.png" id="543_fwkgs"]
+[ext_resource type="Texture2D" uid="uid://bs3g8y3qa7s4k" path="res://player/sprites/SWAT_soldier/swat_idle_v02_17.png" id="544_r2gpd"]
+[ext_resource type="Texture2D" uid="uid://6u3m71ygfcrw" path="res://player/sprites/SWAT_soldier/swat_idle_v02_18.png" id="545_asvjh"]
+[ext_resource type="Texture2D" uid="uid://dipo2t7rdny58" path="res://player/sprites/SWAT_soldier/swat_idle_v02_19.png" id="546_jymtb"]
+[ext_resource type="Texture2D" uid="uid://bndc6c7cuvllv" path="res://player/sprites/SWAT_soldier/swat_idle_v02_20.png" id="547_tkw7w"]
+[ext_resource type="Texture2D" uid="uid://blrxqee5ivte1" path="res://player/sprites/SWAT_soldier/swat_idle_v02_21.png" id="548_orcvd"]
+[ext_resource type="Texture2D" uid="uid://dxkxlrwdnr2yx" path="res://player/sprites/SWAT_soldier/swat_idle_v02_22.png" id="549_iy0bi"]
+[ext_resource type="Texture2D" uid="uid://tvc6ileu6rpr" path="res://player/sprites/SWAT_soldier/swat_idle_v02_23.png" id="550_lhxvd"]
+[ext_resource type="Texture2D" uid="uid://dktoeqfv70b0o" path="res://player/sprites/SWAT_soldier/swat_idle_v02_24.png" id="551_mggcu"]
+[ext_resource type="Texture2D" uid="uid://bq2p6grd1qrje" path="res://player/sprites/SWAT_soldier/swat_idle_v02_25.png" id="552_85gw4"]
+[ext_resource type="Texture2D" uid="uid://icrwnmsgdgst" path="res://player/sprites/SWAT_soldier/swat_idle_v02_26.png" id="553_2w47q"]
+[ext_resource type="Texture2D" uid="uid://ipti1s6xvbx5" path="res://player/sprites/SWAT_soldier/swat_idle_v02_27.png" id="554_gj3l4"]
+[ext_resource type="Texture2D" uid="uid://wvdmymn511s7" path="res://player/sprites/SWAT_soldier/swat_idle_v02_28.png" id="555_ybgln"]
+[ext_resource type="Texture2D" uid="uid://dlxmaklqkcrdt" path="res://player/sprites/SWAT_soldier/swat_idle_v02_29.png" id="556_hod28"]
+[ext_resource type="Texture2D" uid="uid://kje8d84voy8s" path="res://player/sprites/SWAT_soldier/swat_idle_v02_30.png" id="557_iqf5j"]
+[ext_resource type="Texture2D" uid="uid://bn0uhw2mak4bp" path="res://player/sprites/SWAT_soldier/swat_idle_v02_31.png" id="558_duurg"]
+[ext_resource type="Texture2D" uid="uid://bl15ihmq0cop6" path="res://player/sprites/SWAT_soldier/swat_idle_v02_32.png" id="559_38831"]
+[ext_resource type="Texture2D" uid="uid://dny1udjsntjuu" path="res://player/sprites/SWAT_soldier/swat_idle_v02_33.png" id="560_22pp0"]
+[ext_resource type="Texture2D" uid="uid://dnlnwhaoxbohv" path="res://player/sprites/SWAT_soldier/swat_idle_v02_34.png" id="561_fxk1c"]
+[ext_resource type="Texture2D" uid="uid://csvte4ivbrl4e" path="res://player/sprites/SWAT_soldier/swat_idle_v02_35.png" id="562_ixvke"]
+[ext_resource type="Texture2D" uid="uid://bk8jcdrsvikts" path="res://player/sprites/SWAT_soldier/swat_idle_v02_36.png" id="563_8c46k"]
+[ext_resource type="Texture2D" uid="uid://b8xx00fukg3md" path="res://player/sprites/SWAT_soldier/swat_idle_v02_37.png" id="564_nyjep"]
+[ext_resource type="Texture2D" uid="uid://d002mihdr5e6b" path="res://player/sprites/SWAT_soldier/swat_idle_v02_38.png" id="565_3q6fw"]
+[ext_resource type="Texture2D" uid="uid://sqjh6abnq4jm" path="res://player/sprites/SWAT_soldier/swat_idle_v02_39.png" id="566_sg7pb"]
+[ext_resource type="Texture2D" uid="uid://ca7acrdst0aw8" path="res://player/sprites/SWAT_soldier/swat_idle_v02_40.png" id="567_h28ue"]
+[ext_resource type="Texture2D" uid="uid://dpv7vnk6bg3ri" path="res://player/sprites/SWAT_soldier/swat_idle_v02_41.png" id="568_qj8gj"]
+[ext_resource type="Texture2D" uid="uid://dmsqp0ymmyox0" path="res://player/sprites/SWAT_soldier/swat_idle_v02_42.png" id="569_r3oq5"]
+[ext_resource type="Texture2D" uid="uid://bn380cvp1mhkm" path="res://player/sprites/SWAT_soldier/swat_idle_v02_43.png" id="570_qrjnl"]
+[ext_resource type="Texture2D" uid="uid://c27p4esnq6kgr" path="res://player/sprites/SWAT_soldier/swat_idle_v02_44.png" id="571_7m5cl"]
+[ext_resource type="Texture2D" uid="uid://dfnqmgqun0rpr" path="res://player/sprites/SWAT_soldier/swat_idle_v02_45.png" id="572_r1vka"]
+[ext_resource type="Texture2D" uid="uid://bqbogf4y4iyx2" path="res://player/sprites/SWAT_soldier/swat_idle_v02_46.png" id="573_1f2qs"]
+[ext_resource type="Texture2D" uid="uid://b2xer3s1hv0ma" path="res://player/sprites/SWAT_soldier/swat_idle_v02_47.png" id="574_khasw"]
+[ext_resource type="Texture2D" uid="uid://diyjv561slqec" path="res://player/sprites/SWAT_soldier/swat_idle_v02_48.png" id="575_vbgdq"]
+[ext_resource type="Texture2D" uid="uid://pal6q8fdvv3g" path="res://player/sprites/SWAT_soldier/swat_idle_v02_49.png" id="576_mgv8n"]
+[ext_resource type="Texture2D" uid="uid://jivqq4bg4bxw" path="res://player/sprites/SWAT_soldier/swat_idle_v02_50.png" id="577_23lbs"]
+[ext_resource type="Texture2D" uid="uid://mt3f1dyk82gu" path="res://player/sprites/SWAT_soldier/swat_idle_v02_51.png" id="578_4epre"]
+[ext_resource type="Texture2D" uid="uid://ljpcg7mw2qjn" path="res://player/sprites/SWAT_soldier/swat_idle_v02_52.png" id="579_x3yu4"]
+[ext_resource type="Texture2D" uid="uid://dh1palxradle" path="res://player/sprites/SWAT_soldier/swat_idle_v02_53.png" id="580_j8lxe"]
+[ext_resource type="Texture2D" uid="uid://dcb66emlqfo3t" path="res://player/sprites/SWAT_soldier/swat_idle_v02_54.png" id="581_f16oy"]
+[ext_resource type="Texture2D" uid="uid://cgo7nbjebbv5t" path="res://player/sprites/SWAT_soldier/swat_idle_v02_55.png" id="582_2cdqs"]
+[ext_resource type="Texture2D" uid="uid://cm0paib4iir5w" path="res://player/sprites/SWAT_soldier/swat_idle_v02_56.png" id="583_hila3"]
+[ext_resource type="Texture2D" uid="uid://dfuy3mour64hv" path="res://player/sprites/SWAT_soldier/swat_idle_v02_57.png" id="584_jycll"]
+[ext_resource type="Texture2D" uid="uid://dpbjstnki0bqc" path="res://player/sprites/SWAT_soldier/swat_idle_v02_58.png" id="585_a0xax"]
+[ext_resource type="Texture2D" uid="uid://b8ptj117lnt0y" path="res://player/sprites/SWAT_soldier/swat_idle_v02_59.png" id="586_wwst1"]
+[ext_resource type="Texture2D" uid="uid://b4runox6tumxt" path="res://player/sprites/SWAT_soldier/swat_idle_v02_60.png" id="587_jnlne"]
+[ext_resource type="Texture2D" uid="uid://bfcuidx4b25ks" path="res://player/sprites/SWAT_soldier/swat_idle_v02_61.png" id="588_iru3c"]
+[ext_resource type="Texture2D" uid="uid://c7vxxuhboo8kp" path="res://player/sprites/SWAT_soldier/swat_idle_v02_62.png" id="589_w8q13"]
+[ext_resource type="Texture2D" uid="uid://b552475vbmjil" path="res://player/sprites/SWAT_soldier/swat_idle_v02_63.png" id="590_h8olq"]
+[ext_resource type="Texture2D" uid="uid://d13fj1tqyhfeu" path="res://player/sprites/SWAT_soldier/swat_idle_v02_64.png" id="591_3b7i0"]
+[ext_resource type="Texture2D" uid="uid://bc6vns8vh7qif" path="res://player/sprites/SWAT_soldier/swat_idle_v02_65.png" id="592_572od"]
+[ext_resource type="Texture2D" uid="uid://cx8c5yxv3e7p4" path="res://player/sprites/SWAT_soldier/swat_idle_v02_66.png" id="593_adw2y"]
+[ext_resource type="Texture2D" uid="uid://64bv0m2buqvk" path="res://player/sprites/SWAT_soldier/swat_idle_v02_67.png" id="594_te7eg"]
+[ext_resource type="Texture2D" uid="uid://b6kvnip0y8fyy" path="res://player/sprites/SWAT_soldier/swat_idle_v02_68.png" id="595_mjb6a"]
+[ext_resource type="Texture2D" uid="uid://c05iep8xrfqnd" path="res://player/sprites/SWAT_soldier/swat_idle_v02_69.png" id="596_7f0pn"]
+[ext_resource type="Texture2D" uid="uid://bmlkkq8lb8lsm" path="res://player/sprites/SWAT_soldier/swat_idle_v02_70.png" id="597_7whyo"]
+[ext_resource type="Texture2D" uid="uid://7tp628d4evxn" path="res://player/sprites/SWAT_soldier/swat_idle_v02_71.png" id="598_lvy7v"]
+[ext_resource type="Texture2D" uid="uid://habj562r5vsb" path="res://player/sprites/SWAT_soldier/swat_idle_v02_72.png" id="599_81udj"]
+[ext_resource type="Texture2D" uid="uid://c5janqbaker5i" path="res://player/sprites/SWAT_soldier/swat_idle_v02_73.png" id="600_p2gup"]
+[ext_resource type="Texture2D" uid="uid://b44y3ahwddndw" path="res://player/sprites/SWAT_soldier/swat_idle_v02_74.png" id="601_cqygs"]
+[ext_resource type="Texture2D" uid="uid://su7pr2eskbhy" path="res://player/sprites/SWAT_soldier/swat_walk_v06_00.png" id="606_gbhxm"]
+[ext_resource type="Texture2D" uid="uid://db41y410s6jou" path="res://player/sprites/SWAT_soldier/swat_walk_v06_01.png" id="607_78jm1"]
+[ext_resource type="Texture2D" uid="uid://6kbrtreocih0" path="res://player/sprites/SWAT_soldier/swat_walk_v06_02.png" id="608_cjtc3"]
+[ext_resource type="Texture2D" uid="uid://dv2d7ftq0t8us" path="res://player/sprites/SWAT_soldier/swat_walk_v06_03.png" id="609_oovy3"]
+[ext_resource type="Texture2D" uid="uid://cyqdlmu2quorq" path="res://player/sprites/SWAT_soldier/swat_walk_v06_04.png" id="610_px68h"]
+[ext_resource type="Texture2D" uid="uid://cbb17tk22rsel" path="res://player/sprites/SWAT_soldier/swat_walk_v06_05.png" id="611_5cj1f"]
+[ext_resource type="Texture2D" uid="uid://csr2hs8uv2y1h" path="res://player/sprites/SWAT_soldier/swat_walk_v06_06.png" id="612_015kw"]
+[ext_resource type="Texture2D" uid="uid://d3jafcahp7rql" path="res://player/sprites/SWAT_soldier/swat_walk_v06_07.png" id="613_helwc"]
+[ext_resource type="Texture2D" uid="uid://ctqix3v4u7k8f" path="res://player/sprites/SWAT_soldier/swat_walk_v06_08.png" id="614_uscxv"]
+[ext_resource type="Texture2D" uid="uid://c611dbc8mjx8d" path="res://player/sprites/SWAT_soldier/swat_walk_v06_09.png" id="615_fgcko"]
+[ext_resource type="Texture2D" uid="uid://db8rvjp72ohul" path="res://player/sprites/SWAT_soldier/swat_walk_v06_10.png" id="616_kahlt"]
+[ext_resource type="Texture2D" uid="uid://bv023xfm3qdni" path="res://player/sprites/SWAT_soldier/swat_walk_v06_11.png" id="617_au31q"]
+[ext_resource type="Texture2D" uid="uid://bsumrpow24f87" path="res://player/sprites/SWAT_soldier/swat_walk_v06_12.png" id="618_g2sko"]
+[ext_resource type="Texture2D" uid="uid://ujmv0vamrcvw" path="res://player/sprites/SWAT_soldier/swat_walk_v06_13.png" id="619_lawc5"]
+[ext_resource type="Texture2D" uid="uid://1g52bggqrukg" path="res://player/sprites/SWAT_soldier/swat_walk_v06_14.png" id="620_gn2vd"]
+[ext_resource type="Texture2D" uid="uid://fjaxlqfuliof" path="res://player/sprites/SWAT_soldier/swat_walk_v06_15.png" id="621_jlh7v"]
+[ext_resource type="Texture2D" uid="uid://b4kb2duermf4f" path="res://player/sprites/SWAT_soldier/swat_walk_v06_16.png" id="622_wkngu"]
+[ext_resource type="Texture2D" uid="uid://c2kjoqbulc4wi" path="res://player/sprites/SWAT_soldier/swat_walk_v06_17.png" id="623_di6kj"]
+[ext_resource type="Texture2D" uid="uid://cok4sw4qci07l" path="res://player/sprites/SWAT_soldier/swat_walk_v06_18.png" id="624_45ntp"]
+[ext_resource type="Texture2D" uid="uid://dh5c4bbtdhh1o" path="res://player/sprites/SWAT_soldier/swat_walk_v06_19.png" id="625_c760d"]
+[ext_resource type="Texture2D" uid="uid://c3rnw081p2kr7" path="res://player/sprites/SWAT_soldier/swat_walk_v06_20.png" id="626_u1pxr"]
+[ext_resource type="Texture2D" uid="uid://bd652bt84f76p" path="res://player/sprites/SWAT_soldier/swat_walk_v06_21.png" id="627_bwu7s"]
+[ext_resource type="Texture2D" uid="uid://h4n240mvn3jv" path="res://player/sprites/SWAT_soldier/swat_walk_v06_22.png" id="628_flddj"]
+[ext_resource type="Texture2D" uid="uid://ds36hlpjiuog2" path="res://player/sprites/SWAT_soldier/swat_walk_v06_23.png" id="629_glow7"]
+[ext_resource type="Texture2D" uid="uid://bpswbrxermcw2" path="res://player/sprites/SWAT_soldier/swat_walk_v06_24.png" id="630_a6cgw"]
+[ext_resource type="Texture2D" uid="uid://ceh3uonvfuofa" path="res://player/sprites/SWAT_soldier/swat_walk_v01_00.png" id="630_swetk"]
+[ext_resource type="Texture2D" uid="uid://hnqabqssime8" path="res://player/sprites/SWAT_soldier/swat_walk_v02_00.png" id="630_tyhgc"]
+[ext_resource type="Texture2D" uid="uid://bhqub87fku38g" path="res://player/sprites/SWAT_soldier/swat_walk_v02_01.png" id="631_4vt3o"]
+[ext_resource type="Texture2D" uid="uid://nc6pbyu8wvke" path="res://player/sprites/SWAT_soldier/swat_walk_v04_00.png" id="631_5j2cn"]
+[ext_resource type="Texture2D" uid="uid://bvb1i7bndkesq" path="res://player/sprites/SWAT_soldier/swat_walk_v01_01.png" id="631_pccb4"]
+[ext_resource type="Texture2D" uid="uid://b0e840tm05jra" path="res://player/sprites/SWAT_soldier/swat_walk_v01_02.png" id="632_q3i0l"]
+[ext_resource type="Texture2D" uid="uid://cuvwxef40dbv2" path="res://player/sprites/SWAT_soldier/swat_walk_v02_02.png" id="632_tdl03"]
+[ext_resource type="Texture2D" uid="uid://cvy6bcdrnfdy6" path="res://player/sprites/SWAT_soldier/swat_walk_v04_01.png" id="632_ytsno"]
+[ext_resource type="Texture2D" uid="uid://c722ieq5dae1q" path="res://player/sprites/SWAT_soldier/swat_walk_v04_02.png" id="633_0hpa8"]
+[ext_resource type="Texture2D" uid="uid://c40adu8iql1p5" path="res://player/sprites/SWAT_soldier/swat_walk_v02_03.png" id="633_ejfqg"]
+[ext_resource type="Texture2D" uid="uid://1cnwg34dsst3" path="res://player/sprites/SWAT_soldier/swat_walk_v01_03.png" id="633_vcym1"]
+[ext_resource type="Texture2D" uid="uid://dst24r06nd6ft" path="res://player/sprites/SWAT_soldier/swat_walk_v04_03.png" id="634_7f5bx"]
+[ext_resource type="Texture2D" uid="uid://ikyfgb4nkqwq" path="res://player/sprites/SWAT_soldier/swat_walk_v02_04.png" id="634_h105b"]
+[ext_resource type="Texture2D" uid="uid://drggmw33wuvpi" path="res://player/sprites/SWAT_soldier/swat_walk_v01_04.png" id="634_xf032"]
+[ext_resource type="Texture2D" uid="uid://gridnskqabhw" path="res://player/sprites/SWAT_soldier/swat_walk_v02_05.png" id="635_6i80e"]
+[ext_resource type="Texture2D" uid="uid://ccvp2xf4uohi8" path="res://player/sprites/SWAT_soldier/swat_walk_v04_04.png" id="635_gytvk"]
+[ext_resource type="Texture2D" uid="uid://dm34hxj0hwbtk" path="res://player/sprites/SWAT_soldier/swat_walk_v01_05.png" id="635_i3i05"]
+[ext_resource type="Texture2D" uid="uid://dcqcmsvcjbvrk" path="res://player/sprites/SWAT_soldier/swat_walk_v01_06.png" id="636_6mdpx"]
+[ext_resource type="Texture2D" uid="uid://dao8jx7vggpuf" path="res://player/sprites/SWAT_soldier/swat_walk_v02_06.png" id="636_ouywl"]
+[ext_resource type="Texture2D" uid="uid://v4cad3xbydbh" path="res://player/sprites/SWAT_soldier/swat_walk_v04_05.png" id="636_q664k"]
+[ext_resource type="Texture2D" uid="uid://b5rfyads2blan" path="res://player/sprites/SWAT_soldier/swat_walk_v02_07.png" id="637_bbfkj"]
+[ext_resource type="Texture2D" uid="uid://mtevvnij445a" path="res://player/sprites/SWAT_soldier/swat_walk_v01_07.png" id="637_sj8up"]
+[ext_resource type="Texture2D" uid="uid://mtg1pdpikvyb" path="res://player/sprites/SWAT_soldier/swat_walk_v04_06.png" id="637_tuih0"]
+[ext_resource type="Texture2D" uid="uid://q05iaky1gqy7" path="res://player/sprites/SWAT_soldier/swat_walk_v01_08.png" id="638_3m31u"]
+[ext_resource type="Texture2D" uid="uid://bepovabtp8oes" path="res://player/sprites/SWAT_soldier/swat_walk_v04_07.png" id="638_fl2jp"]
+[ext_resource type="Texture2D" uid="uid://b3t07k6w71oyw" path="res://player/sprites/SWAT_soldier/swat_walk_v02_08.png" id="638_guu8t"]
+[ext_resource type="Texture2D" uid="uid://0p258daijtk8" path="res://player/sprites/SWAT_soldier/swat_walk_v02_09.png" id="639_kwbvv"]
+[ext_resource type="Texture2D" uid="uid://belh02hjxvofh" path="res://player/sprites/SWAT_soldier/swat_walk_v04_08.png" id="639_qjn7m"]
+[ext_resource type="Texture2D" uid="uid://clrw028fb31yu" path="res://player/sprites/SWAT_soldier/swat_walk_v01_09.png" id="639_tav73"]
+[ext_resource type="Texture2D" uid="uid://uposhlyonw1p" path="res://player/sprites/SWAT_soldier/swat_walk_v04_09.png" id="640_81mnl"]
+[ext_resource type="Texture2D" uid="uid://4s7bimjgj7v0" path="res://player/sprites/SWAT_soldier/swat_walk_v02_10.png" id="640_dufbi"]
+[ext_resource type="Texture2D" uid="uid://bl4ffw0o0nwoi" path="res://player/sprites/SWAT_soldier/swat_walk_v01_10.png" id="640_hqhoy"]
+[ext_resource type="Texture2D" uid="uid://c7sdtf0en1uph" path="res://player/sprites/SWAT_soldier/swat_walk_v04_10.png" id="641_2qua3"]
+[ext_resource type="Texture2D" uid="uid://bln5uaperio22" path="res://player/sprites/SWAT_soldier/swat_walk_v02_11.png" id="641_invna"]
+[ext_resource type="Texture2D" uid="uid://c6fgbwv0e7623" path="res://player/sprites/SWAT_soldier/swat_walk_v01_11.png" id="641_vksh2"]
+[ext_resource type="Texture2D" uid="uid://c0evinrbvbr25" path="res://player/sprites/SWAT_soldier/swat_walk_v01_12.png" id="642_hfi6n"]
+[ext_resource type="Texture2D" uid="uid://cqxx0mrjqh4m" path="res://player/sprites/SWAT_soldier/swat_walk_v04_11.png" id="642_pxna7"]
+[ext_resource type="Texture2D" uid="uid://bhmgjyarayvt8" path="res://player/sprites/SWAT_soldier/swat_walk_v02_12.png" id="642_q55ba"]
+[ext_resource type="Texture2D" uid="uid://bodojiab5wxty" path="res://player/sprites/SWAT_soldier/swat_walk_v01_13.png" id="643_0yid7"]
+[ext_resource type="Texture2D" uid="uid://q2f634q5cfop" path="res://player/sprites/SWAT_soldier/swat_walk_v04_12.png" id="643_osmob"]
+[ext_resource type="Texture2D" uid="uid://5n1e67haa3jk" path="res://player/sprites/SWAT_soldier/swat_walk_v02_13.png" id="643_r0v8v"]
+[ext_resource type="Texture2D" uid="uid://bqww5j6smnshw" path="res://player/sprites/SWAT_soldier/swat_walk_v04_13.png" id="644_4koam"]
+[ext_resource type="Texture2D" uid="uid://s11d8xgn1fnl" path="res://player/sprites/SWAT_soldier/swat_walk_v02_14.png" id="644_88pw5"]
+[ext_resource type="Texture2D" uid="uid://txfs7cj3rwxr" path="res://player/sprites/SWAT_soldier/swat_walk_v01_14.png" id="644_jxpgx"]
+[ext_resource type="Texture2D" uid="uid://mye6ywudqu3e" path="res://player/sprites/SWAT_soldier/swat_walk_v01_15.png" id="645_4hj4f"]
+[ext_resource type="Texture2D" uid="uid://brbqcangre4dy" path="res://player/sprites/SWAT_soldier/swat_walk_v04_14.png" id="645_grxbf"]
+[ext_resource type="Texture2D" uid="uid://rg4bwpdtbxlg" path="res://player/sprites/SWAT_soldier/swat_walk_v02_15.png" id="645_iedsp"]
+[ext_resource type="Texture2D" uid="uid://12qyi2axx04e" path="res://player/sprites/SWAT_soldier/swat_walk_v04_15.png" id="646_dutb3"]
+[ext_resource type="Texture2D" uid="uid://bm4di4lu3x8j3" path="res://player/sprites/SWAT_soldier/swat_walk_v02_16.png" id="646_e3ua4"]
+[ext_resource type="Texture2D" uid="uid://dgunks4pggkxn" path="res://player/sprites/SWAT_soldier/swat_walk_v01_16.png" id="646_vwdb3"]
+[ext_resource type="Texture2D" uid="uid://bk3v8cpytude8" path="res://player/sprites/SWAT_soldier/swat_walk_v04_16.png" id="647_c3xrm"]
+[ext_resource type="Texture2D" uid="uid://cai5yxy2lda1e" path="res://player/sprites/SWAT_soldier/swat_walk_v02_17.png" id="647_uf4cx"]
+[ext_resource type="Texture2D" uid="uid://dbl6emvsggavc" path="res://player/sprites/SWAT_soldier/swat_walk_v01_17.png" id="647_xfi3k"]
+[ext_resource type="Texture2D" uid="uid://bsuewcsagentn" path="res://player/sprites/SWAT_soldier/swat_walk_v04_17.png" id="648_dch1w"]
+[ext_resource type="Texture2D" uid="uid://cb8tesi4eobhw" path="res://player/sprites/SWAT_soldier/swat_walk_v01_18.png" id="648_h1diw"]
+[ext_resource type="Texture2D" uid="uid://0g4a24x2tgls" path="res://player/sprites/SWAT_soldier/swat_walk_v02_18.png" id="648_ld7om"]
+[ext_resource type="Texture2D" uid="uid://d4eei03ehl60m" path="res://player/sprites/SWAT_soldier/swat_walk_v01_19.png" id="649_02w3n"]
+[ext_resource type="Texture2D" uid="uid://y68masxeemw0" path="res://player/sprites/SWAT_soldier/swat_walk_v04_18.png" id="649_lddm2"]
+[ext_resource type="Texture2D" uid="uid://ceayruxxnnn07" path="res://player/sprites/SWAT_soldier/swat_walk_v02_19.png" id="649_oo58m"]
+[ext_resource type="Texture2D" uid="uid://p6mckb7hoc36" path="res://player/sprites/SWAT_soldier/swat_walk_v04_19.png" id="650_2e781"]
+[ext_resource type="Texture2D" uid="uid://brf37hccxmuj" path="res://player/sprites/SWAT_soldier/swat_walk_v02_20.png" id="650_8gmmc"]
+[ext_resource type="Texture2D" uid="uid://dyogqdxpxql76" path="res://player/sprites/SWAT_soldier/swat_walk_v01_20.png" id="650_cjlk7"]
+[ext_resource type="Texture2D" uid="uid://cn8s1iqdwq7tb" path="res://player/sprites/SWAT_soldier/swat_walk_v01_21.png" id="651_0avha"]
+[ext_resource type="Texture2D" uid="uid://deg0rvilus5pk" path="res://player/sprites/SWAT_soldier/swat_walk_v02_21.png" id="651_555gf"]
+[ext_resource type="Texture2D" uid="uid://cjwab7o3byl34" path="res://player/sprites/SWAT_soldier/swat_walk_v04_20.png" id="651_lfv6t"]
+[ext_resource type="Texture2D" uid="uid://d3ijb1u137mqk" path="res://player/sprites/SWAT_soldier/swat_walk_v02_22.png" id="652_lg2ov"]
+[ext_resource type="Texture2D" uid="uid://cpongqmuvropw" path="res://player/sprites/SWAT_soldier/swat_walk_v01_22.png" id="652_xnbdb"]
+[ext_resource type="Texture2D" uid="uid://cljfhgbixpobs" path="res://player/sprites/SWAT_soldier/swat_walk_v04_21.png" id="652_y78v6"]
+[ext_resource type="Texture2D" uid="uid://cginkdn882skv" path="res://player/sprites/SWAT_soldier/swat_walk_v02_23.png" id="653_g5nmi"]
+[ext_resource type="Texture2D" uid="uid://bcufisdj8ad8w" path="res://player/sprites/SWAT_soldier/swat_walk_v04_22.png" id="653_qugt1"]
+[ext_resource type="Texture2D" uid="uid://bpodn6wsh4mu4" path="res://player/sprites/SWAT_soldier/swat_walk_v01_23.png" id="653_y8hpb"]
+[ext_resource type="Texture2D" uid="uid://c6w3ror7ivurd" path="res://player/sprites/SWAT_soldier/swat_walk_v04_23.png" id="654_ip5vf"]
+[ext_resource type="Texture2D" uid="uid://b13yemvmdgtgq" path="res://player/sprites/SWAT_soldier/swat_walk_v01_24.png" id="654_tbf4m"]
+[ext_resource type="Texture2D" uid="uid://rpeur0s7wnuf" path="res://player/sprites/SWAT_soldier/swat_walk_v02_24.png" id="654_vn0cx"]
+[ext_resource type="Texture2D" uid="uid://bgowkriod2i5g" path="res://player/sprites/SWAT_soldier/swat_walk_v04_24.png" id="655_2jdml"]
+[ext_resource type="Texture2D" uid="uid://bya7x6xmw4yxa" path="res://player/sprites/SWAT_soldier/swat_walk_v05_00.png" id="656_oyyhe"]
+[ext_resource type="Texture2D" uid="uid://dq0ny1y0ynb7c" path="res://player/sprites/SWAT_soldier/swat_walk_v05_01.png" id="657_4vffb"]
+[ext_resource type="Texture2D" uid="uid://dmq8bhyxu1lj" path="res://player/sprites/SWAT_soldier/swat_walk_v05_02.png" id="658_hcbsw"]
+[ext_resource type="Texture2D" uid="uid://b7i2ijegp2t64" path="res://player/sprites/SWAT_soldier/swat_walk_v05_03.png" id="659_xid2j"]
+[ext_resource type="Texture2D" uid="uid://cjom0r2tik20j" path="res://player/sprites/SWAT_soldier/swat_walk_v05_04.png" id="660_os0wf"]
+[ext_resource type="Texture2D" uid="uid://bm7mtt4umbes0" path="res://player/sprites/SWAT_soldier/swat_walk_v05_05.png" id="661_3sh7i"]
+[ext_resource type="Texture2D" uid="uid://daydnbjbehg2b" path="res://player/sprites/SWAT_soldier/swat_walk_v05_06.png" id="662_1qew4"]
+[ext_resource type="Texture2D" uid="uid://dolk4e7er0yqw" path="res://player/sprites/SWAT_soldier/swat_walk_v05_07.png" id="663_07xyw"]
+[ext_resource type="Texture2D" uid="uid://b1x856kobc1i8" path="res://player/sprites/SWAT_soldier/swat_walk_v05_08.png" id="664_0ejj7"]
+[ext_resource type="Texture2D" uid="uid://yv7xwq2lx1it" path="res://player/sprites/SWAT_soldier/swat_walk_v05_09.png" id="665_up7ff"]
+[ext_resource type="Texture2D" uid="uid://c0o2jij6xg0bn" path="res://player/sprites/SWAT_soldier/swat_walk_v05_10.png" id="666_divc2"]
+[ext_resource type="Texture2D" uid="uid://ca3sv3sopehpn" path="res://player/sprites/SWAT_soldier/swat_walk_v05_11.png" id="667_5kfeu"]
+[ext_resource type="Texture2D" uid="uid://clc3uo840q0uu" path="res://player/sprites/SWAT_soldier/swat_walk_v05_12.png" id="668_qrawf"]
+[ext_resource type="Texture2D" uid="uid://d0r1ql7qo2wxq" path="res://player/sprites/SWAT_soldier/swat_walk_v05_13.png" id="669_l21a6"]
+[ext_resource type="Texture2D" uid="uid://b21x0go6uj73f" path="res://player/sprites/SWAT_soldier/swat_walk_v05_14.png" id="670_nc5ly"]
+[ext_resource type="Texture2D" uid="uid://c45veu7rusybr" path="res://player/sprites/SWAT_soldier/swat_walk_v05_15.png" id="671_uavov"]
+[ext_resource type="Texture2D" uid="uid://bsiov7blfuxbv" path="res://player/sprites/SWAT_soldier/swat_walk_v05_16.png" id="672_qd2om"]
+[ext_resource type="Texture2D" uid="uid://2585r10x1iek" path="res://player/sprites/SWAT_soldier/swat_walk_v05_17.png" id="673_uvlft"]
+[ext_resource type="Texture2D" uid="uid://ci4g7jdjetrib" path="res://player/sprites/SWAT_soldier/swat_walk_v05_18.png" id="674_yh5kx"]
+[ext_resource type="Texture2D" uid="uid://cp318o5qxbo1c" path="res://player/sprites/SWAT_soldier/swat_walk_v05_19.png" id="675_o6ql0"]
+[ext_resource type="Texture2D" uid="uid://bv4lb33mgme07" path="res://player/sprites/SWAT_soldier/swat_walk_v05_20.png" id="676_uh8xk"]
+[ext_resource type="Texture2D" uid="uid://c1n7klfaaosvc" path="res://player/sprites/SWAT_soldier/swat_walk_v05_21.png" id="677_lfgb2"]
+[ext_resource type="Texture2D" uid="uid://daxc4wghgittr" path="res://player/sprites/SWAT_soldier/swat_walk_v05_22.png" id="678_ctvwv"]
+[ext_resource type="Texture2D" uid="uid://dlg7jfm1wof1t" path="res://player/sprites/SWAT_soldier/swat_walk_v05_23.png" id="679_qlyc7"]
+[ext_resource type="Texture2D" uid="uid://brt2v40nrivq" path="res://player/sprites/SWAT_soldier/swat_walk_v05_24.png" id="680_a7gbv"]
+[ext_resource type="Texture2D" uid="uid://sgt0mn3qaa6a" path="res://player/sprites/SWAT_soldier/swat_walk_v03_00.png" id="681_6vvnh"]
+[ext_resource type="Texture2D" uid="uid://bn8wcqe1j6p2q" path="res://player/sprites/SWAT_soldier/swat_walk_v03_01.png" id="682_2o212"]
+[ext_resource type="Texture2D" uid="uid://50puw56m4dlq" path="res://player/sprites/SWAT_soldier/swat_walk_v03_02.png" id="683_dbc7t"]
+[ext_resource type="Texture2D" uid="uid://cyx72rjmjhnxk" path="res://player/sprites/SWAT_soldier/swat_walk_v03_03.png" id="684_j63ij"]
+[ext_resource type="Texture2D" uid="uid://b7e1fsh1cos63" path="res://player/sprites/SWAT_soldier/swat_walk_v03_04.png" id="685_ouxt2"]
+[ext_resource type="Texture2D" uid="uid://ck801hetu0q2t" path="res://player/sprites/SWAT_soldier/swat_walk_v03_05.png" id="686_cpl1n"]
+[ext_resource type="Texture2D" uid="uid://3skt8mk0qrr8" path="res://player/sprites/SWAT_soldier/swat_walk_v03_06.png" id="687_6h6ig"]
+[ext_resource type="Texture2D" uid="uid://bywt5vheagawh" path="res://player/sprites/SWAT_soldier/swat_walk_v03_07.png" id="688_df033"]
+[ext_resource type="Texture2D" uid="uid://c2r5mqeo0i7mn" path="res://player/sprites/SWAT_soldier/swat_walk_v03_08.png" id="689_3uwlh"]
+[ext_resource type="Texture2D" uid="uid://cytta55s1ayyd" path="res://player/sprites/SWAT_soldier/swat_walk_v03_09.png" id="690_0e4nh"]
+[ext_resource type="Texture2D" uid="uid://x44afyydgmtb" path="res://player/sprites/SWAT_soldier/swat_walk_v03_10.png" id="691_xi6rl"]
+[ext_resource type="Texture2D" uid="uid://ccv03ysiw0env" path="res://player/sprites/SWAT_soldier/swat_walk_v03_11.png" id="692_y5qc7"]
+[ext_resource type="Texture2D" uid="uid://dq6uodi258q5d" path="res://player/sprites/SWAT_soldier/swat_walk_v03_12.png" id="693_a7ucu"]
+[ext_resource type="Texture2D" uid="uid://e871eunwpmtg" path="res://player/sprites/SWAT_soldier/swat_walk_v03_13.png" id="694_63ddj"]
+[ext_resource type="Texture2D" uid="uid://bqkg2mwidlgbj" path="res://player/sprites/SWAT_soldier/swat_walk_v03_14.png" id="695_vsh7e"]
+[ext_resource type="Texture2D" uid="uid://cfmfap0d6bw2a" path="res://player/sprites/SWAT_soldier/swat_walk_v03_15.png" id="696_4cwe0"]
+[ext_resource type="Texture2D" uid="uid://s7snq7h6yjj5" path="res://player/sprites/SWAT_soldier/swat_walk_v03_16.png" id="697_ryupo"]
+[ext_resource type="Texture2D" uid="uid://rjt86dtrwk3a" path="res://player/sprites/SWAT_soldier/swat_walk_v03_17.png" id="698_bn508"]
+[ext_resource type="Texture2D" uid="uid://cyrogj0q4h18k" path="res://player/sprites/SWAT_soldier/swat_walk_v03_18.png" id="699_w5by5"]
+[ext_resource type="Texture2D" uid="uid://ddbynv8xs2ee" path="res://player/sprites/SWAT_soldier/swat_walk_v03_19.png" id="700_0ddmc"]
+[ext_resource type="Texture2D" uid="uid://b4cyiy3qtjxr8" path="res://player/sprites/SWAT_soldier/swat_walk_v03_20.png" id="701_m7vcu"]
+[ext_resource type="Texture2D" uid="uid://d06opm8l88mkm" path="res://player/sprites/SWAT_soldier/swat_walk_v03_21.png" id="702_vgs2b"]
+[ext_resource type="Texture2D" uid="uid://dg4klqsafcbn" path="res://player/sprites/SWAT_soldier/swat_walk_v03_22.png" id="703_u00g3"]
+[ext_resource type="Texture2D" uid="uid://cseyvd80sujtk" path="res://player/sprites/SWAT_soldier/swat_walk_v03_23.png" id="704_60u4g"]
+[ext_resource type="Texture2D" uid="uid://dc2eaxrdh8bdi" path="res://player/sprites/SWAT_soldier/swat_walk_v03_24.png" id="705_dc6kg"]
+[ext_resource type="Texture2D" uid="uid://ctqd41k63gao" path="res://player/sprites/SWAT_soldier/swat_walk_v07_00.png" id="730_tqoud"]
+[ext_resource type="Texture2D" uid="uid://cp88iy56g12aq" path="res://player/sprites/SWAT_soldier/swat_walk_v07_01.png" id="731_yrdf1"]
+[ext_resource type="Texture2D" uid="uid://b5ropml2f7esl" path="res://player/sprites/SWAT_soldier/swat_walk_v07_02.png" id="732_ja8np"]
+[ext_resource type="Texture2D" uid="uid://dbuc28to56nqn" path="res://player/sprites/SWAT_soldier/swat_walk_v07_03.png" id="733_026e5"]
+[ext_resource type="Texture2D" uid="uid://bvu8nqvs5ylc7" path="res://player/sprites/SWAT_soldier/swat_walk_v07_04.png" id="734_dixe3"]
+[ext_resource type="Texture2D" uid="uid://bu5e4oqib31ha" path="res://player/sprites/SWAT_soldier/swat_walk_v07_05.png" id="735_2lcff"]
+[ext_resource type="Texture2D" uid="uid://kkgo6cxqoaoq" path="res://player/sprites/SWAT_soldier/swat_walk_v07_06.png" id="736_3ojox"]
+[ext_resource type="Texture2D" uid="uid://cbpong6o36qin" path="res://player/sprites/SWAT_soldier/swat_walk_v07_07.png" id="737_imkb5"]
+[ext_resource type="Texture2D" uid="uid://x8rhmtoutebh" path="res://player/sprites/SWAT_soldier/swat_walk_v07_08.png" id="738_4s24x"]
+[ext_resource type="Texture2D" uid="uid://dy6p2138rkn4l" path="res://player/sprites/SWAT_soldier/swat_walk_v07_09.png" id="739_80lhm"]
+[ext_resource type="Texture2D" uid="uid://c36dfyfsruqh6" path="res://player/sprites/SWAT_soldier/swat_walk_v07_10.png" id="740_eigyh"]
+[ext_resource type="Texture2D" uid="uid://d1e2b2dt2hdni" path="res://player/sprites/SWAT_soldier/swat_walk_v07_11.png" id="741_flggl"]
+[ext_resource type="Texture2D" uid="uid://bt7myxfetq6qy" path="res://player/sprites/SWAT_soldier/swat_walk_v07_12.png" id="742_u5uxx"]
+[ext_resource type="Texture2D" uid="uid://cyaeed5xcmbbo" path="res://player/sprites/SWAT_soldier/swat_walk_v07_13.png" id="743_dhslm"]
+[ext_resource type="Texture2D" uid="uid://b7wdrl4vf8d6x" path="res://player/sprites/SWAT_soldier/swat_walk_v07_14.png" id="744_iix0a"]
+[ext_resource type="Texture2D" uid="uid://dyn1232k6a55x" path="res://player/sprites/SWAT_soldier/swat_walk_v07_15.png" id="745_weyrk"]
+[ext_resource type="Texture2D" uid="uid://dmbwo76twv7ka" path="res://player/sprites/SWAT_soldier/swat_walk_v07_16.png" id="746_i7ifx"]
+[ext_resource type="Texture2D" uid="uid://d3fp7detk1bnh" path="res://player/sprites/SWAT_soldier/swat_walk_v07_17.png" id="747_yn5xx"]
+[ext_resource type="Texture2D" uid="uid://cnoosyg6h8yl" path="res://player/sprites/SWAT_soldier/swat_walk_v07_18.png" id="748_iuck3"]
+[ext_resource type="Texture2D" uid="uid://de50vb67a7shv" path="res://player/sprites/SWAT_soldier/swat_walk_v07_19.png" id="749_tjjjw"]
+[ext_resource type="Texture2D" uid="uid://ck8cacqfvp0i" path="res://player/sprites/SWAT_soldier/swat_walk_v07_20.png" id="750_lpg2g"]
+[ext_resource type="Texture2D" uid="uid://c66wqgyd4el5s" path="res://player/sprites/SWAT_soldier/swat_walk_v07_21.png" id="751_es64m"]
+[ext_resource type="Texture2D" uid="uid://djdnb6urs28rn" path="res://player/sprites/SWAT_soldier/swat_walk_v07_22.png" id="752_bkser"]
+[ext_resource type="Texture2D" uid="uid://b80pu1atjaxpj" path="res://player/sprites/SWAT_soldier/swat_walk_v07_23.png" id="753_br27o"]
+[ext_resource type="Texture2D" uid="uid://lqhwc35cf68a" path="res://player/sprites/SWAT_soldier/swat_walk_v07_24.png" id="754_4oxux"]
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_rkbax"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(64, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(32, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(32, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(32, 72, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(0, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgyib"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(0, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(0, 72, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(64, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(64, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebec5"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(64, 72, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yllr7"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(96, 48, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb6p2"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(96, 24, 16, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wodsf"]
-atlas = ExtResource("1_oul6g")
-region = Rect2(96, 72, 16, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_32hag"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g1dw6")
+"texture": ExtResource("227_a6cgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_5j2cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_ytsno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_0hpa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_7f5bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_gytvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_q664k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_tuih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_fl2jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_qjn7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_81mnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_2qua3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_pxna7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_osmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_4koam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_grxbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_dutb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_c3xrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_dch1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_lddm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_2e781")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_lfv6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_y78v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_qugt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_ip5vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_2jdml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_oyyhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_4vffb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_hcbsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_xid2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_os0wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_3sh7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_1qew4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_07xyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261_0ejj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_up7ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_divc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_5kfeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_qrawf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_l21a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267_nc5ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_uavov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("269_qd2om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270_uvlft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("271_yh5kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("272_o6ql0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("273_uh8xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("274_lfgb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("275_ctvwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("276_qlyc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("277_a7gbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("278_6vvnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279_2o212")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280_dbc7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281_j63ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282_ouxt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283_cpl1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("284_6h6ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("285_df033")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_3uwlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_0e4nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_xi6rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_y5qc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_a7ucu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291_63ddj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292_vsh7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293_4cwe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294_ryupo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295_bn508")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296_w5by5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297_0ddmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298_m7vcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299_vgs2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("300_u00g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301_60u4g")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"IdleEast",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yw30f")
+"texture": ExtResource("302_dc6kg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qjkh3")
+"texture": ExtResource("303_tqoud")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6k8r")
+"texture": ExtResource("304_yrdf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305_ja8np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_026e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_dixe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_2lcff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_3ojox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_imkb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311_4s24x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312_80lhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_eigyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314_flggl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_u5uxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_dhslm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_iix0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("318_weyrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_i7ifx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_yn5xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321_iuck3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("322_tjjjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("323_lpg2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("324_es64m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325_bkser")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326_br27o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("327_4oxux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("328_b6yyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("329_st6kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("330_pp24l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("331_7gh83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("332_oxlva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333_kh7b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334_gn5kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("335_foxap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_7xhvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_8bxht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_5dxhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_elxn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_t45ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341_e1uxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_lrcsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_50jrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_1tran")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_amc3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_7lmc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347_nm6p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_g4xcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_0ypoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_quc5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_kncep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352_2egsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("353_sn2mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("354_wjxpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355_crmf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356_jrgn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357_hd3ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358_v8ciu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("359_a8ee7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("360_7dsnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("361_dwgx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("362_wdw4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363_kbm5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("364_tx24i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("365_skuvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("366_e2pbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("367_hgs4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("368_yjghl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("369_msl2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("370_lguvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("371_hun5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("372_w1g2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("373_ojsox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("374_qu2bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("375_7parc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("376_v4ftr")
 }],
 "loop": true,
-"name": &"walk_east",
-"speed": 5.0
+"name": &"IdleNorth",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_boad6")
+"texture": ExtResource("152_2ruik")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rgyib")
+"texture": ExtResource("153_ihlbj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hg6s5")
+"texture": ExtResource("154_41851")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_neq8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_ew5ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_xp5r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_yve4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_s2axw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_03vs3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_thsc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_ioine")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_rlt4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_ngx2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_d4nj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_laqub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_iksxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_vlpbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_nxkwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_0o82o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_2rrkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_s5fwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_mciyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_rum62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_xfosx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_0cgsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_1xj55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_7e7p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_p43ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_ht7a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_7g78q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_s8o1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_2t0sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_obuac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_ejhsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_g3u2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_8kjsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_2oius")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_jr6ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_v6ykp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_87iyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_bkcjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_yhqyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_m717h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_h5xoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_4x77g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_yy7uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_pipov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_6uf0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_hfx74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_funsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_dp31c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_gbhxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_78jm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_cjtc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_oovy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_px68h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_5cj1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_015kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_helwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_uscxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_fgcko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_kahlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_au31q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_g2sko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_lawc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_gn2vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_jlh7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_wkngu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_di6kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_45ntp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_c760d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_u1pxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_bwu7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_flddj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_glow7")
 }],
 "loop": true,
-"name": &"walk_north",
-"speed": 5.0
+"name": &"IdleNorthEast",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8t03j")
+"texture": ExtResource("527_1d7aa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ieo8")
+"texture": ExtResource("528_f7p8n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ebec5")
+"texture": ExtResource("529_60wr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("530_m22ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("531_3yjkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("532_4lt58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("533_e4gyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("534_s0gcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("535_cglga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("536_idmq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("537_wafa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("538_p4f66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("539_sfhnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("540_p6mej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("541_x2t5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("542_05gse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("543_fwkgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("544_r2gpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("545_asvjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("546_jymtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("547_tkw7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("548_orcvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("549_iy0bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("550_lhxvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("551_mggcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("552_85gw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("553_2w47q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("554_gj3l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("555_ybgln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("556_hod28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("557_iqf5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("558_duurg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("559_38831")
+}, {
+"duration": 1.0,
+"texture": ExtResource("560_22pp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("561_fxk1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("562_ixvke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("563_8c46k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("564_nyjep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("565_3q6fw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("566_sg7pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("567_h28ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("568_qj8gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("569_r3oq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("570_qrjnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("571_7m5cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("572_r1vka")
+}, {
+"duration": 1.0,
+"texture": ExtResource("573_1f2qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("574_khasw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("575_vbgdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("576_mgv8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("577_23lbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("578_4epre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("579_x3yu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("580_j8lxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("581_f16oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("582_2cdqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("583_hila3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("584_jycll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("585_a0xax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("586_wwst1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("587_jnlne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("588_iru3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("589_w8q13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("590_h8olq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("591_3b7i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("592_572od")
+}, {
+"duration": 1.0,
+"texture": ExtResource("593_adw2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("594_te7eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("595_mjb6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("596_7f0pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("597_7whyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("598_lvy7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("599_81udj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("600_p2gup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("601_cqygs")
 }],
 "loop": true,
-"name": &"walk_south",
-"speed": 5.0
+"name": &"IdleNorthWest",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yllr7")
+"texture": ExtResource("377_ad270")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kb6p2")
+"texture": ExtResource("378_7gao2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wodsf")
+"texture": ExtResource("379_py4lv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("380_d0ks2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("381_p3xsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("382_y478r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("383_rmswq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("384_ssk1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("385_tv5xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("386_w10vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("387_ydroa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("388_vs07p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("389_sjado")
+}, {
+"duration": 1.0,
+"texture": ExtResource("390_i2752")
+}, {
+"duration": 1.0,
+"texture": ExtResource("391_deede")
+}, {
+"duration": 1.0,
+"texture": ExtResource("392_cmc1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("393_5gt6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("394_js0ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("395_x65ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("396_d7cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("397_gju6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("398_c6js7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("399_o8ka1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("400_sckft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("401_s5epi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("402_mfdar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("403_eot5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("404_fa602")
+}, {
+"duration": 1.0,
+"texture": ExtResource("405_oruai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("406_fqh4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("407_o74fd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("408_ovyk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("409_amxor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("410_nsg2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("411_0rgl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("412_unoy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("413_lxxae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("414_g6b22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("415_uec7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("416_m3tur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("417_tpa1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("418_qqy8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("419_v3j5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("420_p5at5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("421_yy42w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("422_6bvgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("423_v770q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("424_i1rvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("425_w7cei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("426_8gnhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("427_pibct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("428_7nlw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("429_lxd0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("430_lj8ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("431_femsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("432_tmri5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("433_ug36m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("434_e2p1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("435_ly4j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("436_lt5f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("437_ovvp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("438_x2qjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("439_k8etc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("440_jbewc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("441_vur68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("442_fhe70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("443_ikfta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("444_u4tap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("445_eyn1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("446_aq3lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("447_47hhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("448_6yjxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("449_ou5gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("450_3srqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("451_wbtqf")
 }],
 "loop": true,
-"name": &"walk_west",
-"speed": 5.0
+"name": &"IdleSouth",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_vn0cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_swetk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_pccb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_q3i0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_vcym1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_xf032")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_i3i05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_6mdpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_sj8up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_3m31u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_tav73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_hqhoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_vksh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_hfi6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_0yid7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_jxpgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_4hj4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_vwdb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_xfi3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_h1diw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_02w3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_cjlk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_0avha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_xnbdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_y8hpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_tbf4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_co662")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_vsdi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_pksq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_hvxhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_t2jnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_c7f0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_nyar0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_b3lrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_4wg8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_6muug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_1vmpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_n0s81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_ol2mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_s2tfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_oh8cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_73sc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_gd3ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_1p4ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_bwa6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_jxwtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_2irbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_vcoxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_646mi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_uiowf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_sn3xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_3lw60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_r4wtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_bf3f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_gchne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_d02b5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_03hff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_ab8ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_2unwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_spkeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_vyrre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_y3uv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_n1vaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_yi622")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_wh2jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_bcm8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_jm13r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_phgcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_vox8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_8785t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_dmbog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_sa05m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_ne73j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_b6omq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_aa3x8")
+}],
+"loop": true,
+"name": &"IdleSouthEast",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ydv84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_umx7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qdn6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q662g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wl1jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lfxht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q6wt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_17bhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bksrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rnakr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jl8y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sv6gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n2h8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1u742")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pxexp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wyb8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jupv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_op111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nqad8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_iedsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6dorl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jvn8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jl51y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_14ji7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_pb0ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xrpra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_1ehq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vma6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c0xak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_hxt8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_6mnla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_i7n05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_e5g7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_d3how")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jth23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_klv10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_on8wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_hxvuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ei8aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0gn0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qjy07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_oawel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_6h2n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_h7va4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_721qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rm5kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7r4n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_uxfql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_rfbx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_a4wd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_m2n3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_tyhgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_4vt3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_tdl03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ejfqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_h105b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_6i80e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ouywl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_bbfkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_guu8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kwbvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_dufbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_invna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_q55ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_r0v8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_88pw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_iedsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_e3ua4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_uf4cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ld7om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_oo58m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_8gmmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_555gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_lg2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_g5nmi")
+}],
+"loop": true,
+"name": &"IdleSouthWest",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("452_oabyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("453_ukpk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("454_m1ge7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("455_nhj33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("456_m5k8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("457_0uryu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("458_h601n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("459_kspuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("460_gdmqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("461_sfqad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("462_lfaaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("463_uouoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("464_w1opl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("465_kffs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("466_1qnoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("467_vvysj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("468_nfwif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("469_jt8h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("470_1i47f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("471_b6151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("472_eou5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("473_lxhot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("474_i74bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("475_5piq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("476_l1sga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("477_fs1c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("478_ekb3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("479_hwl6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("480_xj3mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("481_if0el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("482_34o2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("483_m7evo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("484_8n3aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("485_voli5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("486_g5snn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("487_x66ub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("488_g0l8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("489_h7wyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("490_8fto5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("491_ki7tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("492_bfn7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("493_ixqvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("494_ygho6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("495_3lc0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("496_p8lc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("497_7px2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("498_d0of5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("499_eyafg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("500_c0wfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("501_fksxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("502_tsf8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("503_o5ptu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("504_og78q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("505_asom3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("506_njrd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("507_w1tw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("508_i333d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("509_7bgew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("510_7cnf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("511_0hw7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("512_d4w4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("513_so37v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("514_jpbod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("515_7spxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("516_am4wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("517_gk28u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("518_tq0tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("519_txs2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("520_wudot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("521_ts75g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("522_o8igi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("523_f6ra6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("524_a2wtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("525_ybn0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("526_6s70r")
+}],
+"loop": true,
+"name": &"IdleWest",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("656_oyyhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("657_4vffb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("658_hcbsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("659_xid2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("660_os0wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("661_3sh7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("662_1qew4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("663_07xyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("664_0ejj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("665_up7ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("666_divc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("667_5kfeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("668_qrawf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("669_l21a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("670_nc5ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("671_uavov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("672_qd2om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("673_uvlft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("674_yh5kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("675_o6ql0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("676_uh8xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("677_lfgb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("678_ctvwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("679_qlyc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("680_a7gbv")
+}],
+"loop": true,
+"name": &"RunEast",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("681_6vvnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("682_2o212")
+}, {
+"duration": 1.0,
+"texture": ExtResource("683_dbc7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("684_j63ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("685_ouxt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("686_cpl1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("687_6h6ig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("688_df033")
+}, {
+"duration": 1.0,
+"texture": ExtResource("689_3uwlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("690_0e4nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("691_xi6rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("692_y5qc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("693_a7ucu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("694_63ddj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("695_vsh7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("696_4cwe0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("697_ryupo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("698_bn508")
+}, {
+"duration": 1.0,
+"texture": ExtResource("699_w5by5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("700_0ddmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("701_m7vcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("702_vgs2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("703_u00g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("704_60u4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("705_dc6kg")
+}],
+"loop": true,
+"name": &"RunNorth",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("631_5j2cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("632_ytsno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("633_0hpa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("634_7f5bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("635_gytvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("636_q664k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("637_tuih0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("638_fl2jp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("639_qjn7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("640_81mnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("641_2qua3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("642_pxna7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("643_osmob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("644_4koam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("645_grxbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("646_dutb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("647_c3xrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("648_dch1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("649_lddm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("650_2e781")
+}, {
+"duration": 1.0,
+"texture": ExtResource("651_lfv6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("652_y78v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("653_qugt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("654_ip5vf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("655_2jdml")
+}],
+"loop": true,
+"name": &"RunNorthEast",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("630_tyhgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("631_4vt3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("632_tdl03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("633_ejfqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("634_h105b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("635_6i80e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("636_ouywl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("637_bbfkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("638_guu8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("639_kwbvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("640_dufbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("641_invna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("642_q55ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("643_r0v8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("644_88pw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("645_iedsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("646_e3ua4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("647_uf4cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("648_ld7om")
+}, {
+"duration": 1.0,
+"texture": ExtResource("649_oo58m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("650_8gmmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("651_555gf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("652_lg2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("653_g5nmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("654_vn0cx")
+}],
+"loop": true,
+"name": &"RunNorthWest",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("730_tqoud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("731_yrdf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("732_ja8np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("733_026e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("734_dixe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("735_2lcff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("736_3ojox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("737_imkb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("738_4s24x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("739_80lhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("740_eigyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("741_flggl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("742_u5uxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("743_dhslm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("744_iix0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("745_weyrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("746_i7ifx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("747_yn5xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("748_iuck3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("749_tjjjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("750_lpg2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("751_es64m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("752_bkser")
+}, {
+"duration": 1.0,
+"texture": ExtResource("753_br27o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("754_4oxux")
+}],
+"loop": true,
+"name": &"RunSouth",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("606_gbhxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("607_78jm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("608_cjtc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("609_oovy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("610_px68h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("611_5cj1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("612_015kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("613_helwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("614_uscxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("615_fgcko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("616_kahlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("617_au31q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("618_g2sko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("619_lawc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("620_gn2vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("621_jlh7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("622_wkngu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("623_di6kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("624_45ntp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("625_c760d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("626_u1pxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("627_bwu7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("628_flddj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("629_glow7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("630_a6cgw")
+}],
+"loop": true,
+"name": &"RunSouthEast",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_vma6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_c0xak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_hxt8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_6mnla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_i7n05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_e5g7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_d3how")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_jth23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_klv10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_on8wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_hxvuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ei8aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_0gn0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_qjy07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_oawel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_6h2n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_h7va4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_721qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_rm5kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_7r4n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_uxfql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_rfbx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_a4wd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_m2n3p")
+}],
+"loop": true,
+"name": &"RunSouthWest",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("630_swetk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("631_pccb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("632_q3i0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("633_vcym1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("634_xf032")
+}, {
+"duration": 1.0,
+"texture": ExtResource("635_i3i05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("636_6mdpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("637_sj8up")
+}, {
+"duration": 1.0,
+"texture": ExtResource("638_3m31u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("639_tav73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("640_hqhoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("641_vksh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("642_hfi6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("643_0yid7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("644_jxpgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("645_4hj4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("646_vwdb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("647_xfi3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("648_h1diw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("649_02w3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("650_cjlk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("651_0avha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("652_xnbdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("653_y8hpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("654_tbf4m")
+}],
+"loop": true,
+"name": &"RunWest",
+"speed": 30.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("controller")]
 script = ExtResource("1_rkbax")
-animatedSprite2D = NodePath("AnimatedSprite2D")
+controller = NodePath("PlayerController")
+
+[node name="PlayerController" type="Node2D" parent="."]
+script = ExtResource("2_q662g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("SeparationRayShape2D_rkbax")
 
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource("2_qdn6d")
+
+[node name="PlayerIdleState" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("controller", "animatedSprite", "player")]
+script = ExtResource("3_q662g")
+controller = NodePath("../../PlayerController")
+animatedSprite = NodePath("../../AnimatedSprite2D")
+player = NodePath("../..")
+
+[node name="PlayerRunState" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("animatedSprite", "controller", "player")]
+script = ExtResource("5_wl1jk")
+animatedSprite = NodePath("../../AnimatedSprite2D")
+controller = NodePath("../../PlayerController")
+player = NodePath("../..")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(3.75, 3.25)
+position = Vector2(-1, -1)
+scale = Vector2(1.24609, 1.31641)
 sprite_frames = SubResource("SpriteFrames_32hag")
-frame_progress = 0.885068
-script = ExtResource("3_g1dw6")
+animation = &"RunSouthWest"
 
 [node name="Camera2D" type="Camera2D" parent="."]

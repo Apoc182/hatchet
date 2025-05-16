@@ -11,6 +11,7 @@ public abstract partial class BaseController : Node2D
     public delegate void DirectionHeldEventHandler(Vector2 direction);
 
     [Signal]
-    public delegate void AttackStartedEventHandler();
+    public delegate void AttackStartedEventHandler(Vector2 targetPosition);
+
 
 }

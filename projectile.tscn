@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://fgshodrhx34c"]
+
+[ext_resource type="Texture2D" uid="uid://htjjx3d60too" path="res://player/sprites/bullet.png" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://dnfr7tpfoenaa" path="res://Projectile.cs" id="1_qxf0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxf0c"]
+size = Vector2(6, 4)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_qxf0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_a85iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qxf0c")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(0.3, 0.15)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="onScreenExited"]

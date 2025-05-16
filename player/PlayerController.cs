@@ -49,9 +49,13 @@ public partial class PlayerController : BaseController
 			_previous_direction = direction;
 		}
 
-		if(direction.X != 0 || direction.Y != 0){
+		if (direction.X != 0 || direction.Y != 0)
+		{
 			EmitSignal(SignalName.DirectionHeld, direction);
 		}
+
+		// Handle direction
+		if (@event.IsActionPressed("attack")) EmitSignal(SignalName.AttackStarted, GetGlobalMousePosition());
 
 	}
 }

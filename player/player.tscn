@@ -1,9 +1,11 @@
-[gd_scene load_steps=807 format=3 uid="uid://bvaqey3pc2qck"]
+[gd_scene load_steps=809 format=3 uid="uid://bvaqey3pc2qck"]
 
 [ext_resource type="Script" uid="uid://duvt3uv8vq4um" path="res://player/Player.cs" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://y2nou15lwng8" path="res://shooter.tscn" id="2_78jm1"]
 [ext_resource type="Script" uid="uid://na4yqg0lwvhr" path="res://player/PlayerController.cs" id="2_q662g"]
 [ext_resource type="Script" uid="uid://bx7jtwgribkrf" path="res://resources/StateMachine.cs" id="2_qdn6d"]
 [ext_resource type="Texture2D" uid="uid://dcjpmfcog4g0r" path="res://player/sprites/SWAT_soldier/swat_idle_v08_00.png" id="2_ydv84"]
+[ext_resource type="PackedScene" uid="uid://fgshodrhx34c" path="res://projectile.tscn" id="3_cjtc3"]
 [ext_resource type="Script" uid="uid://ctotk8hrttngx" path="res://player/PlayerIdleState.cs" id="3_q662g"]
 [ext_resource type="Texture2D" uid="uid://dh68kkwvc6ckb" path="res://player/sprites/SWAT_soldier/swat_idle_v08_01.png" id="3_umx7l"]
 [ext_resource type="Texture2D" uid="uid://60b0u2jwted3" path="res://player/sprites/SWAT_soldier/swat_idle_v08_02.png" id="4_qdn6d"]
@@ -3291,6 +3293,10 @@ animations = [{
 script = ExtResource("1_rkbax")
 controller = NodePath("PlayerController")
 
+[node name="Shooter" parent="." instance=ExtResource("2_78jm1")]
+projectile = ExtResource("3_cjtc3")
+projectileSpeed = 10
+
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource("2_q662g")
 
@@ -3319,3 +3325,5 @@ sprite_frames = SubResource("SpriteFrames_32hag")
 animation = &"RunSouthWest"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="AttackStarted" from="PlayerController" to="Shooter" method="OnPlayerControllerAttackStarted"]

@@ -14,6 +14,12 @@ public partial class Shooter : Node2D
     [Export]
     private int projectileSpeed;
 
+    [Export]
+    private double rateOfFireCooldown;
+
+    [Export]
+    private Timer rateOfFireCooldownTimer;
+
     private List<Projectile> projectilePool = new List<Projectile>();
 
     public override void _Ready()
@@ -25,6 +31,8 @@ public partial class Shooter : Node2D
             GetTree().Root.AddChild(instance);
             projectilePool.Add(instance);
         }
+
+        rateOfFireCooldownTimer.WaitTime = rateOfFireCooldown;
     }
 
     private Projectile GetPooledProjectile()
@@ -37,9 +45,16 @@ public partial class Shooter : Node2D
         return null; // pool exhausted
     }
 
-    public void OnPlayerControllerAttackStarted(Vector2 targetPosition)
+    public void OnPlayerControllerAttack(Vector2 targetPosition)
     {
-        GD.Print("Attack!");
+
+        if (!rateOfFireCooldownTimer.IsStopped())
+        {
+            return;
+        }
+
+        rateOfFireCooldownTimer.Start();
+
         var p = GetPooledProjectile();
         if (p != null)
         {

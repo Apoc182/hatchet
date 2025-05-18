@@ -3296,7 +3296,9 @@ controller = NodePath("PlayerController")
 
 [node name="Shooter" parent="." instance=ExtResource("2_78jm1")]
 projectile = ExtResource("3_cjtc3")
+poolSize = 500
 projectileSpeed = 10
+rateOfFireCooldown = 0.1
 
 [node name="PlayerController" type="Node2D" parent="."]
 script = ExtResource("2_q662g")
@@ -3327,4 +3329,5 @@ animation = &"RunSouthWest"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="AttackStarted" from="PlayerController" to="Shooter" method="OnPlayerControllerAttackStarted"]
+[connection signal="AttackHeld" from="PlayerController" to="Shooter" method="OnPlayerControllerAttack"]
+[connection signal="AttackStarted" from="PlayerController" to="Shooter" method="OnPlayerControllerAttack"]

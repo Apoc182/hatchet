@@ -4,6 +4,24 @@ using System;
 public partial class PlayerController : BaseController
 {
 	Vector2 _previous_direction = Vector2.Zero;
+	bool attackHeld = false;
+
+	private void ProcessAttack(InputEvent @event)
+	{
+
+		GD.Print(@event.IsActionPressed("attack"));
+		if (@event.IsActionReleased("attack"))
+		{
+			EmitSignal(SignalName.AttackReleased, GetGlobalMousePosition());
+			attackHeld = false;
+		}
+
+		if (@event.IsActionPressed("attack"))
+		{
+			EmitSignal(SignalName.AttackStarted, GetGlobalMousePosition());
+			attackHeld = true;
+		}
+	}
 
 
 	public override void _UnhandledInput(InputEvent @event)
@@ -54,8 +72,15 @@ public partial class PlayerController : BaseController
 			EmitSignal(SignalName.DirectionHeld, direction);
 		}
 
-		// Handle direction
-		if (@event.IsActionPressed("attack")) EmitSignal(SignalName.AttackStarted, GetGlobalMousePosition());
+		ProcessAttack(@event);
 
+	}
+
+	public override void _Process(double delta)
+	{
+		if (attackHeld)
+		{
+			EmitSignal(SignalName.AttackHeld, GetGlobalMousePosition());
+		}
 	}
 }

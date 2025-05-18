@@ -807,7 +807,8 @@
 [ext_resource type="Texture2D" uid="uid://b80pu1atjaxpj" path="res://player/sprites/SWAT_soldier/swat_walk_v07_23.png" id="753_br27o"]
 [ext_resource type="Texture2D" uid="uid://lqhwc35cf68a" path="res://player/sprites/SWAT_soldier/swat_walk_v07_24.png" id="754_4oxux"]
 
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_rkbax"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjtc3"]
+radius = 16.1245
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_32hag"]
 animations = [{
@@ -3301,7 +3302,7 @@ projectileSpeed = 10
 script = ExtResource("2_q662g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("SeparationRayShape2D_rkbax")
+shape = SubResource("CircleShape2D_cjtc3")
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_qdn6d")

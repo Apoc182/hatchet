@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 public partial class StateMachine : Node
 {
-	private IState _currentState;
+	private AbstractState _currentState;
 
 	public override void _Ready()
 	{
-		var states = new List<IState>();
+		var states = new List<AbstractState>();
 
 		foreach (Node child in GetChildren())
 		{
-			if (child is IState state)
+			if (child is AbstractState state)
 			{
 				states.Add(state);
 			}
@@ -24,16 +24,22 @@ public partial class StateMachine : Node
 		}
 	}
 
+	public void InterruptCurrentState(AbstractState state)
+	{
+		_currentState.Interrupt(state);
+	}
+
 	public override void _Process(double delta)
 	{
 		Process(delta);
 	}
 
-	public IState Process(double delta){
+	public AbstractState Process(double delta){
 
-		IState nextState = _currentState.Process(delta);
+		AbstractState nextState = _currentState.Process(delta);
 		
-		if(nextState != _currentState){
+		if (nextState != _currentState)
+		{
 			_currentState.Exit();
 			_currentState = nextState;
 			_currentState.Enter();

@@ -9,7 +9,6 @@ public partial class PlayerController : BaseController
 	private void ProcessAttack(InputEvent @event)
 	{
 
-		GD.Print(@event.IsActionPressed("attack"));
 		if (@event.IsActionReleased("attack"))
 		{
 			EmitSignal(SignalName.AttackReleased, GetGlobalMousePosition());
@@ -59,6 +58,16 @@ public partial class PlayerController : BaseController
 		if (@event.IsActionReleased("down"))
 		{
 			direction.Y = 0;
+		}
+
+		if (@event.IsActionPressed("inventory"))
+		{
+			EmitSignal(SignalName.InventoryPressed);
+		}
+
+		if (@event.IsActionReleased("inventory"))
+		{
+			EmitSignal(SignalName.InventoryReleased);
 		}
 
 		if (direction != _previous_direction)

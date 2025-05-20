@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Diagnostics;
 
-public partial class PlayerIdleState : Node2D, IState
+public partial class PlayerIdleState : AbstractState
 {
 
 	[Export]
@@ -14,9 +14,7 @@ public partial class PlayerIdleState : Node2D, IState
 	[Export]
 	private Player player;
 
-	private IState playerRunState;
-
-	private IState nextState = null;
+	private AbstractState playerRunState;
 
 
 	public override void _Ready(){
@@ -25,7 +23,7 @@ public partial class PlayerIdleState : Node2D, IState
 
 
 
-	public void Enter()
+	public override void Enter()
 	{
 		nextState = null;
 		controller.DirectionChanged += OnDirectionChanged;
@@ -45,20 +43,10 @@ public partial class PlayerIdleState : Node2D, IState
 		}
 	}
 
-	public void Exit()
+	public override void Exit()
 	{
 		controller.DirectionChanged -= OnDirectionChanged;
 	}
 
-	public IState Process(double delta)
-	{
-		if (nextState != null)
-		{
-			return nextState;
-		}
-
-		return this;
-
-	}
 
 }

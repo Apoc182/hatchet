@@ -9,23 +9,29 @@ public partial class Player : CharacterBody2D
 	public float speed = 200.0f;
 
 	[Export]
+	private Node2D backpack;
+
+	[Export]
 	public BaseController controller;
 
 	public Vector2 directionFacing = Vector2.Down;
+	
+	public bool canMove = true;
 
 	public override void _Ready()
 	{
 		controller.DirectionChanged += DirectionFacingHandler;
 		controller.DirectionHeld += CalculateVelocity;
-		controller.DirectionChanged += (Vector2 direction) => {if(direction == Vector2.Zero) Velocity = Vector2.Zero;};
+		controller.DirectionChanged += (Vector2 direction) => { if (direction == Vector2.Zero) Velocity = Vector2.Zero; };
 
 	}
 
-	private void CalculateVelocity(Vector2 direction){
-		
+
+	private void CalculateVelocity(Vector2 direction)
+	{
+
 		Velocity = CartesianToIsometric(direction);
 		Velocity = Velocity * speed;
-		GD.Print(Velocity);
 	}
 
 	private void DirectionFacingHandler(Vector2 direction){
@@ -45,6 +51,6 @@ public partial class Player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		MoveAndSlide();
+		if(canMove) MoveAndSlide();
 	}
 }

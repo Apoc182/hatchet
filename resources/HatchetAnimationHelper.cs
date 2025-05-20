@@ -13,7 +13,6 @@ public static class HatchetAnimationHelper
     {
         string directionName;
 
-        GD.Print(direction);
 
         if (direction == new Vector2(-1, -1)) directionName = "North";
         else if (direction == new Vector2(1, 1)) directionName = "South";

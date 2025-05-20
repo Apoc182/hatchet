@@ -19,4 +19,10 @@ public abstract partial class BaseController : Node2D
 
     [Signal]
     public delegate void AttackReleasedEventHandler(Vector2 targetPosition);
+
+    [Signal]
+    public delegate void InventoryPressedEventHandler();
+
+    [Signal]
+    public delegate void InventoryReleasedEventHandler();
 }

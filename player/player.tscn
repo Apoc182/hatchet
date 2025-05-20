@@ -1,4 +1,4 @@
-[gd_scene load_steps=809 format=3 uid="uid://bvaqey3pc2qck"]
+[gd_scene load_steps=811 format=3 uid="uid://bvaqey3pc2qck"]
 
 [ext_resource type="Script" uid="uid://duvt3uv8vq4um" path="res://player/Player.cs" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://y2nou15lwng8" path="res://shooter.tscn" id="2_78jm1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bl7ea04qe822u" path="res://player/PlayerRunState.cs" id="5_wl1jk"]
 [ext_resource type="Texture2D" uid="uid://caey1k55probi" path="res://player/sprites/SWAT_soldier/swat_idle_v08_04.png" id="6_wl1jk"]
 [ext_resource type="Texture2D" uid="uid://tx2aj67q4wbs" path="res://player/sprites/SWAT_soldier/swat_idle_v08_05.png" id="7_lfxht"]
+[ext_resource type="Script" uid="uid://us5j5233fjju" path="res://player/PlayerInventoryState.cs" id="8_px68h"]
 [ext_resource type="Texture2D" uid="uid://dfsmr2eq57qbh" path="res://player/sprites/SWAT_soldier/swat_idle_v08_06.png" id="8_q6wt3"]
 [ext_resource type="Texture2D" uid="uid://cfseldf33hxo8" path="res://player/sprites/SWAT_soldier/swat_idle_v08_07.png" id="9_17bhc"]
 [ext_resource type="Texture2D" uid="uid://bny8v0raieor3" path="res://player/sprites/SWAT_soldier/swat_idle_v08_08.png" id="10_bksrx"]
@@ -806,6 +807,7 @@
 [ext_resource type="Texture2D" uid="uid://djdnb6urs28rn" path="res://player/sprites/SWAT_soldier/swat_walk_v07_22.png" id="752_bkser"]
 [ext_resource type="Texture2D" uid="uid://b80pu1atjaxpj" path="res://player/sprites/SWAT_soldier/swat_walk_v07_23.png" id="753_br27o"]
 [ext_resource type="Texture2D" uid="uid://lqhwc35cf68a" path="res://player/sprites/SWAT_soldier/swat_walk_v07_24.png" id="754_4oxux"]
+[ext_resource type="PackedScene" uid="uid://drwcqieaunnex" path="res://player/backpack.tscn" id="807_oovy3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjtc3"]
 radius = 16.1245
@@ -3290,8 +3292,9 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("controller")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("backpack", "controller")]
 script = ExtResource("1_rkbax")
+backpack = NodePath("Backpack")
 controller = NodePath("PlayerController")
 
 [node name="Shooter" parent="." instance=ExtResource("2_78jm1")]
@@ -3321,6 +3324,14 @@ animatedSprite = NodePath("../../AnimatedSprite2D")
 controller = NodePath("../../PlayerController")
 player = NodePath("../..")
 
+[node name="PlayerInventoryState" type="Node2D" parent="StateMachine" node_paths=PackedStringArray("controller", "playerStateMachine", "backpack", "player", "playerIdleState")]
+script = ExtResource("8_px68h")
+controller = NodePath("../../PlayerController")
+playerStateMachine = NodePath("..")
+backpack = NodePath("../../Backpack")
+player = NodePath("../..")
+playerIdleState = NodePath("../PlayerIdleState")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -1)
 scale = Vector2(0.473, 0.5)
@@ -3328,6 +3339,9 @@ sprite_frames = SubResource("SpriteFrames_32hag")
 animation = &"RunSouthWest"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Backpack" parent="." instance=ExtResource("807_oovy3")]
+visible = false
 
 [connection signal="AttackHeld" from="PlayerController" to="Shooter" method="OnPlayerControllerAttack"]
 [connection signal="AttackStarted" from="PlayerController" to="Shooter" method="OnPlayerControllerAttack"]

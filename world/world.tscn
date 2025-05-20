@@ -1,11 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://s3bhy7tmjmy5"]
+[gd_scene load_steps=4 format=3 uid="uid://s3bhy7tmjmy5"]
 
 [ext_resource type="PackedScene" uid="uid://c5rwa84gdlc2d" path="res://world/tile_map.tscn" id="1_tcf2h"]
 [ext_resource type="PackedScene" uid="uid://bvaqey3pc2qck" path="res://player/player.tscn" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://hpvd617g2n4s" path="res://world/tree.tscn" id="3_4717r"]
 
 [node name="World" type="Node2D"]
 
-[node name="TileMap" parent="." instance=ExtResource("1_tcf2h")]
+[node name="Behind" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_tcf2h")]
+[node name="TileMap" parent="Behind" instance=ExtResource("1_tcf2h")]
+
+[node name="YSort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-261, -63)
+
+[node name="Tree2" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-151, -75)
+
+[node name="Tree3" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-242, 133)
+
+[node name="Tree4" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-121, 65)
+
+[node name="Tree5" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-386, 89)
+
+[node name="Tree6" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-231, 257)
+
+[node name="Tree7" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-66, 175)
+
+[node name="Tree8" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-10, 69)
+
+[node name="Tree9" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(-28, -64)
+
+[node name="Tree10" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(152, 115)
+
+[node name="Tree11" parent="YSort" instance=ExtResource("3_4717r")]
+position = Vector2(119, -7)
+
+[node name="Player" parent="YSort" instance=ExtResource("2_tcf2h")]
 position = Vector2(221, 302)
